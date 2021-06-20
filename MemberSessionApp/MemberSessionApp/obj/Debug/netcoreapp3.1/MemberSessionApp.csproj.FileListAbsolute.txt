@@ -1,0 +1,16 @@
+C:\Users\harry\Documents\VS Projects\MemberSessionManager\MemberSessionApp\MemberSessionApp\bin\Debug\netcoreapp3.1\MemberSessionApp.exe
+C:\Users\harry\Documents\VS Projects\MemberSessionManager\MemberSessionApp\MemberSessionApp\bin\Debug\netcoreapp3.1\MemberSessionApp.deps.json
+C:\Users\harry\Documents\VS Projects\MemberSessionManager\MemberSessionApp\MemberSessionApp\bin\Debug\netcoreapp3.1\MemberSessionApp.runtimeconfig.json
+C:\Users\harry\Documents\VS Projects\MemberSessionManager\MemberSessionApp\MemberSessionApp\bin\Debug\netcoreapp3.1\MemberSessionApp.runtimeconfig.dev.json
+C:\Users\harry\Documents\VS Projects\MemberSessionManager\MemberSessionApp\MemberSessionApp\bin\Debug\netcoreapp3.1\MemberSessionApp.dll
+C:\Users\harry\Documents\VS Projects\MemberSessionManager\MemberSessionApp\MemberSessionApp\bin\Debug\netcoreapp3.1\MemberSessionApp.pdb
+C:\Users\harry\Documents\VS Projects\MemberSessionManager\MemberSessionApp\MemberSessionApp\obj\Debug\netcoreapp3.1\MemberSessionApp.csprojAssemblyReference.cache
+C:\Users\harry\Documents\VS Projects\MemberSessionManager\MemberSessionApp\MemberSessionApp\obj\Debug\netcoreapp3.1\MemberSessionApp.Form1.resources
+C:\Users\harry\Documents\VS Projects\MemberSessionManager\MemberSessionApp\MemberSessionApp\obj\Debug\netcoreapp3.1\MemberSessionApp.csproj.GenerateResource.cache
+C:\Users\harry\Documents\VS Projects\MemberSessionManager\MemberSessionApp\MemberSessionApp\obj\Debug\netcoreapp3.1\MemberSessionApp.AssemblyInfoInputs.cache
+C:\Users\harry\Documents\VS Projects\MemberSessionManager\MemberSessionApp\MemberSessionApp\obj\Debug\netcoreapp3.1\MemberSessionApp.AssemblyInfo.cs
+C:\Users\harry\Documents\VS Projects\MemberSessionManager\MemberSessionApp\MemberSessionApp\obj\Debug\netcoreapp3.1\MemberSessionApp.csproj.CoreCompileInputs.cache
+C:\Users\harry\Documents\VS Projects\MemberSessionManager\MemberSessionApp\MemberSessionApp\obj\Debug\netcoreapp3.1\MemberSessionApp.dll
+C:\Users\harry\Documents\VS Projects\MemberSessionManager\MemberSessionApp\MemberSessionApp\obj\Debug\netcoreapp3.1\MemberSessionApp.pdb
+C:\Users\harry\Documents\VS Projects\MemberSessionManager\MemberSessionApp\MemberSessionApp\obj\Debug\netcoreapp3.1\MemberSessionApp.genruntimeconfig.cache
+C:\Users\harry\Documents\VS Projects\MemberSessionManager\MemberSessionApp\MemberSessionApp\obj\Debug\netcoreapp3.1\MemberSessionApp.Properties.Resources.resources
