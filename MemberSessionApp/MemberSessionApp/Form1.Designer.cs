@@ -31,28 +31,23 @@ namespace MemberSessionApp
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnPrevious = new System.Windows.Forms.Button();
             this.btnSession = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.SearchPanel = new System.Windows.Forms.Panel();
-            this.SessionPanel = new System.Windows.Forms.Panel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.searchMemberPanel = new MemberSessionApp.SearchMember();
+            this.sessionPanel = new MemberSessionApp.Session();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.SearchPanel.SuspendLayout();
-            this.SessionPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(230)))), ((int)(((byte)(253)))));
+            this.panel1.Controls.Add(this.btnPrevious);
             this.panel1.Controls.Add(this.btnSession);
             this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.panel2);
@@ -61,6 +56,19 @@ namespace MemberSessionApp
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 450);
             this.panel1.TabIndex = 0;
+            // 
+            // btnPrevious
+            // 
+            this.btnPrevious.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnPrevious.FlatAppearance.BorderSize = 0;
+            this.btnPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrevious.Font = new System.Drawing.Font("HoloLens MDL2 Assets", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnPrevious.Location = new System.Drawing.Point(0, 401);
+            this.btnPrevious.Name = "btnPrevious";
+            this.btnPrevious.Size = new System.Drawing.Size(200, 49);
+            this.btnPrevious.TabIndex = 3;
+            this.btnPrevious.Text = "Session History";
+            this.btnPrevious.UseVisualStyleBackColor = true;
             // 
             // btnSession
             // 
@@ -122,49 +130,19 @@ namespace MemberSessionApp
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // SearchPanel
+            // searchMemberPanel
             // 
-            this.SearchPanel.BackColor = System.Drawing.Color.White;
-            this.SearchPanel.Controls.Add(this.dataGridView1);
-            this.SearchPanel.Controls.Add(this.textBox1);
-            this.SearchPanel.Location = new System.Drawing.Point(219, 52);
-            this.SearchPanel.Name = "SearchPanel";
-            this.SearchPanel.Size = new System.Drawing.Size(569, 386);
-            this.SearchPanel.TabIndex = 2;
+            this.searchMemberPanel.Location = new System.Drawing.Point(261, 117);
+            this.searchMemberPanel.Name = "searchMemberPanel";
+            this.searchMemberPanel.Size = new System.Drawing.Size(494, 333);
+            this.searchMemberPanel.TabIndex = 2;
             // 
-            // SessionPanel
+            // sessionPanel
             // 
-            this.SessionPanel.BackColor = System.Drawing.Color.White;
-            this.SessionPanel.Controls.Add(this.dataGridView2);
-            this.SessionPanel.Location = new System.Drawing.Point(219, 52);
-            this.SessionPanel.Name = "SessionPanel";
-            this.SessionPanel.Size = new System.Drawing.Size(569, 386);
-            this.SessionPanel.TabIndex = 3;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(11, 16);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 25;
-            this.dataGridView2.Size = new System.Drawing.Size(548, 350);
-            this.dataGridView2.TabIndex = 0;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(33, 59);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(526, 307);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(33, 16);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(526, 23);
-            this.textBox1.TabIndex = 0;
+            this.sessionPanel.Location = new System.Drawing.Point(261, 117);
+            this.sessionPanel.Name = "sessionPanel";
+            this.sessionPanel.Size = new System.Drawing.Size(494, 333);
+            this.sessionPanel.TabIndex = 3;
             // 
             // Form1
             // 
@@ -172,8 +150,8 @@ namespace MemberSessionApp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(89)))), ((int)(((byte)(126)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.SessionPanel);
-            this.Controls.Add(this.SearchPanel);
+            this.Controls.Add(this.sessionPanel);
+            this.Controls.Add(this.searchMemberPanel);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -184,11 +162,6 @@ namespace MemberSessionApp
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.SearchPanel.ResumeLayout(false);
-            this.SearchPanel.PerformLayout();
-            this.SessionPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -201,11 +174,9 @@ namespace MemberSessionApp
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnSession;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel SearchPanel;
-        private System.Windows.Forms.Panel SessionPanel;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnPrevious;
+        private SearchMember searchMemberPanel;
+        private Session sessionPanel;
     }
 }
 

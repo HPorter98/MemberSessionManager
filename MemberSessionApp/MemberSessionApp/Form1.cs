@@ -19,20 +19,16 @@ namespace MemberSessionApp
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            SearchPanel.BringToFront();
-            //SessionPanel.SendToBack();
-            MessageBox.Show("Works");
+            searchMemberPanel.BringToFront();
         }
 
         private void btnSession_Click(object sender, EventArgs e)
         {
-            SessionPanel.BringToFront();
-            //SearchPanel.SendToBack();
+            sessionPanel.BringToFront();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            SearchPanel.BringToFront();
         }
 
         private void button1_Click(object sender, EventArgs e)
