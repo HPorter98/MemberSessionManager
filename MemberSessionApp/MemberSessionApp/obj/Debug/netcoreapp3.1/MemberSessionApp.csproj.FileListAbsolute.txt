@@ -15,3 +15,12 @@ C:\Users\harry\Documents\VS Projects\MemberSessionManager\MemberSessionApp\Membe
 C:\Users\harry\Documents\VS Projects\MemberSessionManager\MemberSessionApp\MemberSessionApp\obj\Debug\netcoreapp3.1\MemberSessionApp.Properties.Resources.resources
 C:\Users\harry\Documents\VS Projects\MemberSessionManager\MemberSessionApp\MemberSessionApp\obj\Debug\netcoreapp3.1\MemberSessionApp.SearchMember.resources
 C:\Users\harry\Documents\VS Projects\MemberSessionManager\MemberSessionApp\MemberSessionApp\obj\Debug\netcoreapp3.1\MemberSessionApp.Session.resources
+C:\Users\harry\Documents\VS Projects\MemberSessionManager\MemberSessionApp\MemberSessionApp\bin\Debug\netcoreapp3.1\MemberSessionApp.dll.config
+C:\Users\harry\Documents\VS Projects\MemberSessionManager\MemberSessionApp\MemberSessionApp\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\harry\Documents\VS Projects\MemberSessionManager\MemberSessionApp\MemberSessionApp\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\harry\Documents\VS Projects\MemberSessionManager\MemberSessionApp\MemberSessionApp\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\harry\Documents\VS Projects\MemberSessionManager\MemberSessionApp\MemberSessionApp\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\harry\Documents\VS Projects\MemberSessionManager\MemberSessionApp\MemberSessionApp\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\harry\Documents\VS Projects\MemberSessionManager\MemberSessionApp\MemberSessionApp\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\harry\Documents\VS Projects\MemberSessionManager\MemberSessionApp\MemberSessionApp\obj\Debug\netcoreapp3.1\MemberSessionApp.csprojAssemblyReference.cache
+C:\Users\harry\Documents\VS Projects\MemberSessionManager\MemberSessionApp\MemberSessionApp\obj\Debug\netcoreapp3.1\MemberSessionApp.csproj.CopyComplete

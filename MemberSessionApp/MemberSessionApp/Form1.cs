@@ -29,6 +29,8 @@ namespace MemberSessionApp
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            searchMemberPanel.BringToFront();
+            //searchMemberPanel.StartTable();
         }
 
         private void button1_Click(object sender, EventArgs e)

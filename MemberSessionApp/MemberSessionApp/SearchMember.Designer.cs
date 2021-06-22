@@ -31,8 +31,8 @@ namespace MemberSessionApp
         {
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.lblSearch = new System.Windows.Forms.Label();
-            this.SearchDataGrid = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.SearchDataGrid)).BeginInit();
+            this.SearchTable = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchTable)).BeginInit();
             this.SuspendLayout();
             // 
             // txtSearch
@@ -41,6 +41,7 @@ namespace MemberSessionApp
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(399, 23);
             this.txtSearch.TabIndex = 0;
+            this.txtSearch.TextChanged += new System.EventHandler(this.StartTable);
             // 
             // lblSearch
             // 
@@ -51,25 +52,25 @@ namespace MemberSessionApp
             this.lblSearch.TabIndex = 1;
             this.lblSearch.Text = "Name:";
             // 
-            // SearchDataGrid
+            // SearchTable
             // 
-            this.SearchDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.SearchDataGrid.Location = new System.Drawing.Point(63, 82);
-            this.SearchDataGrid.Name = "SearchDataGrid";
-            this.SearchDataGrid.RowTemplate.Height = 25;
-            this.SearchDataGrid.Size = new System.Drawing.Size(399, 231);
-            this.SearchDataGrid.TabIndex = 2;
+            this.SearchTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.SearchTable.Location = new System.Drawing.Point(15, 59);
+            this.SearchTable.Name = "SearchTable";
+            this.SearchTable.RowTemplate.Height = 25;
+            this.SearchTable.Size = new System.Drawing.Size(466, 248);
+            this.SearchTable.TabIndex = 2;
             // 
             // SearchMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.SearchDataGrid);
+            this.Controls.Add(this.SearchTable);
             this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.txtSearch);
             this.Name = "SearchMember";
             this.Size = new System.Drawing.Size(494, 333);
-            ((System.ComponentModel.ISupportInitialize)(this.SearchDataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchTable)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -79,6 +80,6 @@ namespace MemberSessionApp
 
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label lblSearch;
-        private System.Windows.Forms.DataGridView SearchDataGrid;
+        private System.Windows.Forms.DataGridView SearchTable;
     }
 }
