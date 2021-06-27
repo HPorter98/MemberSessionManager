@@ -12,6 +12,7 @@ namespace MemberSessionApp
 {
     public partial class Form1 : Form
     {
+        List<Member> mList = new List<Member>();
         public Form1()
         {
             InitializeComponent();
@@ -20,11 +21,17 @@ namespace MemberSessionApp
         private void btnSearch_Click(object sender, EventArgs e)
         {
             searchMemberPanel.BringToFront();
+            SessionPanel.Visible = false;
         }
 
         private void btnSession_Click(object sender, EventArgs e)
         {
-            sessionPanel.BringToFront();
+            SessionPanel.BringToFront();
+            SessionPanel.Visible = true;
+            mList = searchMemberPanel.memberList;
+            //SessionPanel.memberList = mList;
+            //SessionPanel.UpdateTable();
+           
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -36,6 +43,12 @@ namespace MemberSessionApp
         private void button1_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            AddMemberPanel.BringToFront();
+            SessionPanel.Visible = false;
         }
     }
 }

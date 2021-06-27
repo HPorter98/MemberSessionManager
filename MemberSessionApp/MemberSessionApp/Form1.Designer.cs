@@ -31,6 +31,7 @@ namespace MemberSessionApp
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.btnPrevious = new System.Windows.Forms.Button();
             this.btnSession = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -38,7 +39,8 @@ namespace MemberSessionApp
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.searchMemberPanel = new MemberSessionApp.SearchMember();
-            this.sessionPanel = new MemberSessionApp.Session();
+            this.SessionPanel = new MemberSessionApp.Session();
+            this.AddMemberPanel = new MemberSessionApp.AddMember();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -47,6 +49,7 @@ namespace MemberSessionApp
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(230)))), ((int)(((byte)(253)))));
+            this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Controls.Add(this.btnPrevious);
             this.panel1.Controls.Add(this.btnSession);
             this.panel1.Controls.Add(this.btnSearch);
@@ -56,6 +59,20 @@ namespace MemberSessionApp
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 450);
             this.panel1.TabIndex = 0;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("HoloLens MDL2 Assets", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAdd.Location = new System.Drawing.Point(0, 209);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(200, 49);
+            this.btnAdd.TabIndex = 4;
+            this.btnAdd.Text = "Add Member";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnPrevious
             // 
@@ -132,17 +149,25 @@ namespace MemberSessionApp
             // 
             // searchMemberPanel
             // 
-            this.searchMemberPanel.Location = new System.Drawing.Point(261, 117);
+            this.searchMemberPanel.Location = new System.Drawing.Point(255, 70);
             this.searchMemberPanel.Name = "searchMemberPanel";
             this.searchMemberPanel.Size = new System.Drawing.Size(494, 333);
             this.searchMemberPanel.TabIndex = 2;
             // 
-            // sessionPanel
+            // SessionPanel
             // 
-            this.sessionPanel.Location = new System.Drawing.Point(261, 117);
-            this.sessionPanel.Name = "sessionPanel";
-            this.sessionPanel.Size = new System.Drawing.Size(494, 333);
-            this.sessionPanel.TabIndex = 3;
+            this.SessionPanel.Location = new System.Drawing.Point(255, 89);
+            this.SessionPanel.Name = "SessionPanel";
+            this.SessionPanel.Size = new System.Drawing.Size(494, 333);
+            this.SessionPanel.TabIndex = 4;
+            this.SessionPanel.Visible = false;
+            // 
+            // AddMemberPanel
+            // 
+            this.AddMemberPanel.Location = new System.Drawing.Point(267, 89);
+            this.AddMemberPanel.Name = "AddMemberPanel";
+            this.AddMemberPanel.Size = new System.Drawing.Size(494, 333);
+            this.AddMemberPanel.TabIndex = 5;
             // 
             // Form1
             // 
@@ -150,7 +175,8 @@ namespace MemberSessionApp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(89)))), ((int)(((byte)(126)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.sessionPanel);
+            this.Controls.Add(this.AddMemberPanel);
+            this.Controls.Add(this.SessionPanel);
             this.Controls.Add(this.searchMemberPanel);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
@@ -175,8 +201,10 @@ namespace MemberSessionApp
         private System.Windows.Forms.Button btnSession;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnPrevious;
+        private System.Windows.Forms.Button btnAdd;
+        private AddMember AddMemberPanel;
         private SearchMember searchMemberPanel;
-        private Session sessionPanel;
+        public Session SessionPanel;
     }
 }
 

@@ -60,6 +60,7 @@ namespace MemberSessionApp
             this.SearchTable.RowTemplate.Height = 25;
             this.SearchTable.Size = new System.Drawing.Size(466, 248);
             this.SearchTable.TabIndex = 2;
+            this.SearchTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.OpenMemberForm);
             // 
             // SearchMember
             // 

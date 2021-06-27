@@ -20,9 +20,11 @@ namespace MemberSessionApp
 
         public DateTime startYear { get; set; }
 
+        public DateTime sessionStart { get; set; }
+
         public string GetFullName()
         {
-            return FirstName + LastName;
+            return FirstName + " " + LastName;
         }
 
     }
