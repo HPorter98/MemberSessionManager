@@ -29,6 +29,7 @@ namespace MemberSessionApp
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.txtFName = new System.Windows.Forms.TextBox();
             this.txtLName = new System.Windows.Forms.TextBox();
@@ -43,12 +44,20 @@ namespace MemberSessionApp
             this.label8 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblfNameError = new System.Windows.Forms.Label();
+            this.lbllNameError = new System.Windows.Forms.Label();
+            this.lblAddressError = new System.Windows.Forms.Label();
+            this.lblPostcodeError = new System.Windows.Forms.Label();
+            this.lblEmgConError = new System.Windows.Forms.Label();
+            this.lblContactError = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(164, 79);
+            this.label1.Location = new System.Drawing.Point(137, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 15);
             this.label1.TabIndex = 0;
@@ -56,14 +65,14 @@ namespace MemberSessionApp
             // 
             // txtFName
             // 
-            this.txtFName.Location = new System.Drawing.Point(234, 76);
+            this.txtFName.Location = new System.Drawing.Point(207, 33);
             this.txtFName.Name = "txtFName";
             this.txtFName.Size = new System.Drawing.Size(100, 23);
             this.txtFName.TabIndex = 1;
             // 
             // txtLName
             // 
-            this.txtLName.Location = new System.Drawing.Point(234, 105);
+            this.txtLName.Location = new System.Drawing.Point(207, 77);
             this.txtLName.Name = "txtLName";
             this.txtLName.Size = new System.Drawing.Size(100, 23);
             this.txtLName.TabIndex = 3;
@@ -71,7 +80,7 @@ namespace MemberSessionApp
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(165, 108);
+            this.label2.Location = new System.Drawing.Point(138, 80);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 15);
             this.label2.TabIndex = 2;
@@ -79,7 +88,7 @@ namespace MemberSessionApp
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(234, 134);
+            this.txtAddress.Location = new System.Drawing.Point(207, 121);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(100, 23);
             this.txtAddress.TabIndex = 5;
@@ -87,7 +96,7 @@ namespace MemberSessionApp
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(179, 137);
+            this.label3.Location = new System.Drawing.Point(152, 124);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 15);
             this.label3.TabIndex = 4;
@@ -95,7 +104,7 @@ namespace MemberSessionApp
             // 
             // txtPostCode
             // 
-            this.txtPostCode.Location = new System.Drawing.Point(234, 163);
+            this.txtPostCode.Location = new System.Drawing.Point(207, 167);
             this.txtPostCode.Name = "txtPostCode";
             this.txtPostCode.Size = new System.Drawing.Size(100, 23);
             this.txtPostCode.TabIndex = 7;
@@ -103,7 +112,7 @@ namespace MemberSessionApp
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(167, 166);
+            this.label4.Location = new System.Drawing.Point(140, 170);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 15);
             this.label4.TabIndex = 6;
@@ -111,7 +120,7 @@ namespace MemberSessionApp
             // 
             // txtEmCon
             // 
-            this.txtEmCon.Location = new System.Drawing.Point(234, 192);
+            this.txtEmCon.Location = new System.Drawing.Point(207, 211);
             this.txtEmCon.Name = "txtEmCon";
             this.txtEmCon.Size = new System.Drawing.Size(100, 23);
             this.txtEmCon.TabIndex = 13;
@@ -119,7 +128,7 @@ namespace MemberSessionApp
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(117, 195);
+            this.label7.Location = new System.Drawing.Point(90, 214);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(111, 15);
             this.label7.TabIndex = 12;
@@ -127,7 +136,7 @@ namespace MemberSessionApp
             // 
             // txtContactNum
             // 
-            this.txtContactNum.Location = new System.Drawing.Point(234, 221);
+            this.txtContactNum.Location = new System.Drawing.Point(207, 255);
             this.txtContactNum.Name = "txtContactNum";
             this.txtContactNum.Size = new System.Drawing.Size(100, 23);
             this.txtContactNum.TabIndex = 15;
@@ -135,7 +144,7 @@ namespace MemberSessionApp
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(149, 224);
+            this.label8.Location = new System.Drawing.Point(122, 258);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(79, 15);
             this.label8.TabIndex = 14;
@@ -143,7 +152,7 @@ namespace MemberSessionApp
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(128, 250);
+            this.btnAdd.Location = new System.Drawing.Point(0, 293);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(100, 40);
             this.btnAdd.TabIndex = 16;
@@ -153,7 +162,7 @@ namespace MemberSessionApp
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(234, 250);
+            this.btnCancel.Location = new System.Drawing.Point(394, 293);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 40);
             this.btnCancel.TabIndex = 17;
@@ -161,10 +170,80 @@ namespace MemberSessionApp
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // lblfNameError
+            // 
+            this.lblfNameError.AutoSize = true;
+            this.lblfNameError.Location = new System.Drawing.Point(207, 59);
+            this.lblfNameError.Name = "lblfNameError";
+            this.lblfNameError.Size = new System.Drawing.Size(64, 15);
+            this.lblfNameError.TabIndex = 18;
+            this.lblfNameError.Text = "First Name";
+            this.lblfNameError.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            // 
+            // lbllNameError
+            // 
+            this.lbllNameError.AutoSize = true;
+            this.lbllNameError.Location = new System.Drawing.Point(207, 103);
+            this.lbllNameError.Name = "lbllNameError";
+            this.lbllNameError.Size = new System.Drawing.Size(64, 15);
+            this.lbllNameError.TabIndex = 19;
+            this.lbllNameError.Text = "First Name";
+            this.lbllNameError.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            // 
+            // lblAddressError
+            // 
+            this.lblAddressError.AutoSize = true;
+            this.lblAddressError.Location = new System.Drawing.Point(207, 149);
+            this.lblAddressError.Name = "lblAddressError";
+            this.lblAddressError.Size = new System.Drawing.Size(64, 15);
+            this.lblAddressError.TabIndex = 20;
+            this.lblAddressError.Text = "First Name";
+            this.lblAddressError.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            // 
+            // lblPostcodeError
+            // 
+            this.lblPostcodeError.AutoSize = true;
+            this.lblPostcodeError.Location = new System.Drawing.Point(207, 193);
+            this.lblPostcodeError.Name = "lblPostcodeError";
+            this.lblPostcodeError.Size = new System.Drawing.Size(64, 15);
+            this.lblPostcodeError.TabIndex = 21;
+            this.lblPostcodeError.Text = "First Name";
+            this.lblPostcodeError.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            // 
+            // lblEmgConError
+            // 
+            this.lblEmgConError.AutoSize = true;
+            this.lblEmgConError.Location = new System.Drawing.Point(207, 237);
+            this.lblEmgConError.Name = "lblEmgConError";
+            this.lblEmgConError.Size = new System.Drawing.Size(64, 15);
+            this.lblEmgConError.TabIndex = 22;
+            this.lblEmgConError.Text = "First Name";
+            this.lblEmgConError.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            // 
+            // lblContactError
+            // 
+            this.lblContactError.AutoSize = true;
+            this.lblContactError.Location = new System.Drawing.Point(207, 281);
+            this.lblContactError.Name = "lblContactError";
+            this.lblContactError.Size = new System.Drawing.Size(64, 15);
+            this.lblContactError.TabIndex = 23;
+            this.lblContactError.Text = "First Name";
+            this.lblContactError.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            // 
             // AddMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblContactError);
+            this.Controls.Add(this.lblEmgConError);
+            this.Controls.Add(this.lblPostcodeError);
+            this.Controls.Add(this.lblAddressError);
+            this.Controls.Add(this.lbllNameError);
+            this.Controls.Add(this.lblfNameError);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtContactNum);
@@ -181,6 +260,7 @@ namespace MemberSessionApp
             this.Controls.Add(this.label1);
             this.Name = "AddMember";
             this.Size = new System.Drawing.Size(494, 333);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,5 +282,13 @@ namespace MemberSessionApp
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label lblfNameError;
+        private System.Windows.Forms.Label lbllNameError;
+        private System.Windows.Forms.Label lblAddressError;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblContactError;
+        private System.Windows.Forms.Label lblEmgConError;
+        private System.Windows.Forms.Label lblPostcodeError;
     }
 }

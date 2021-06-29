@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "9jHPdL+kumjH99c0wS2SwJPSLjp1d7CNiajZhVJYybhN4HhDneIYyzrQ6PE/3ztI5hkEmb19oNG/vVfatlny7A==",
+  "dgSpecHash": "1akT7ixocqHDz4Bv1ioyY8YRYrv0gMLT9YKR4d67Cn1MyXpIN1uClPDR4Qdvbx7qKD67M+y84L6OkYj4E7IpPw==",
   "success": true,
   "projectFilePath": "C:\\Users\\harry\\Documents\\VS Projects\\MemberSessionManager\\MemberSessionApp\\MemberSessionApp\\MemberSessionApp.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\harry\\.nuget\\packages\\fluentvalidation\\10.2.3\\fluentvalidation.10.2.3.nupkg.sha512",
     "C:\\Users\\harry\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\harry\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\harry\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",

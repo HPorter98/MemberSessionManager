@@ -1,4 +1,6 @@
 ﻿using System;
+using FluentValidation;
+using FluentValidation.Results;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,7 +13,7 @@ namespace MemberSessionApp
 {
     public partial class AddMember : UserControl
     {
-        //string dataString = "";
+        private Member newMember = new Member();
         public AddMember()
         {
             InitializeComponent();
@@ -19,17 +21,100 @@ namespace MemberSessionApp
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            //If data is valid, add member to the database
-            if (DataCheck())
+            //Set new member values
+            newMember.FirstName = txtFName.Text;
+            newMember.LastName = txtLName.Text;
+            newMember.Address = txtAddress.Text;
+            newMember.PostCode = txtPostCode.Text;
+            newMember.ContactNum = txtContactNum.Text;
+            newMember.EmergencyNum = txtEmCon.Text;
+            newMember.startYear = DateTime.Now;
+
+            //Validate new member values
+            PersonValidation validator = new PersonValidation();
+            ValidationResult result = validator.Validate(newMember);
+
+            //Check if result is valid
+            if (result.IsValid == false)
             {
-                MessageBox.Show("Accepted");
-                SaveMember();
-                ResetValues();
+                foreach (var f in result.Errors)
+                {//Set error messages where appropriate
+                    if (f.PropertyName == "FirstName")
+                    {
+                        lblfNameError.Text = f.ErrorMessage;
+                        lblfNameError.Visible = true;
+                        lblfNameError.ForeColor = Color.Red;
+                    }
+                    if (f.PropertyName == "LastName")
+                    {
+                        lbllNameError.Text = f.ErrorMessage;
+                        lbllNameError.Visible = true;
+                        lbllNameError.ForeColor = Color.Red;
+                    }
+                    if (f.PropertyName == "Address")
+                    {
+                        lblAddressError.Text = f.ErrorMessage;
+                        lblAddressError.Visible = true;
+                        lblAddressError.ForeColor = Color.Red;
+                    }
+                    if (f.PropertyName == "PostCode")
+                    {
+                        lblPostcodeError.Text = f.ErrorMessage;
+                        lblPostcodeError.Visible = true;
+                        lblPostcodeError.ForeColor = Color.Red;
+                    }
+                    if (f.PropertyName == "ContactNum")
+                    {
+                        lblContactError.Text = f.ErrorMessage;
+                        lblContactError.Visible = true;
+                        lblContactError.ForeColor = Color.Red;
+                    }
+                    if (f.PropertyName == "EmergencyNum")
+                    {
+                        lblEmgConError.Text = f.ErrorMessage;
+                        lblEmgConError.Visible = true;
+                        lblEmgConError.ForeColor = Color.Red;
+                    }
+                }
             }
             else
-            {
-                MessageBox.Show("Invalid");
+            {//If vaild, add member to database and show message
+                MessageBox.Show("Member added");
+                
             }
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            //--Old validation--
+
+            ////If data is valid, add member to the database
+            //if (DataCheck())
+            //{
+            //    MessageBox.Show("Accepted");
+            //    //SaveMember();
+            //    ResetValues();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Invalid");
+            //}
+
+            //if (ValidateChildren(ValidationConstraints.Enabled))
+            //{
+            //    MessageBox.Show("Message");
+            //}
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -60,8 +145,6 @@ namespace MemberSessionApp
 
         private void SaveMember()
         {
-            //Retrieve todays date
-            string dateString = DateTime.Now.ToString("yyyy-MM-dd");
             //Prepare query
             string query = "INSERT INTO Members (LastName, FirstName, HomeAddress, PostCode, ContactNum, EmergencyContact, StartYear) " +
                 "VALUES (@lName, @fName, @address, @postCode, @contact, @emg, @year);";
@@ -76,13 +159,13 @@ namespace MemberSessionApp
                     using (SqlCommand cmd = new SqlCommand(query, connection))
                     {
                         //bind parameters to the query string
-                        cmd.Parameters.Add("@lName", SqlDbType.VarChar).Value = txtLName.Text;
-                        cmd.Parameters.Add("@fName", SqlDbType.VarChar).Value = txtFName.Text;
-                        cmd.Parameters.Add("@address", SqlDbType.VarChar).Value = txtAddress.Text;
-                        cmd.Parameters.Add("@postCode", SqlDbType.VarChar).Value = txtPostCode.Text;
-                        cmd.Parameters.Add("@contact", SqlDbType.VarChar).Value = txtContactNum.Text;
-                        cmd.Parameters.Add("@emg", SqlDbType.VarChar).Value = txtEmCon.Text;
-                        cmd.Parameters.Add("@year", SqlDbType.VarChar).Value = dateString;
+                        cmd.Parameters.Add("@lName", SqlDbType.VarChar).Value = newMember.LastName;
+                        cmd.Parameters.Add("@fName", SqlDbType.VarChar).Value = newMember.FirstName;
+                        cmd.Parameters.Add("@address", SqlDbType.VarChar).Value = newMember.Address;
+                        cmd.Parameters.Add("@postCode", SqlDbType.VarChar).Value = newMember.PostCode;
+                        cmd.Parameters.Add("@contact", SqlDbType.VarChar).Value = newMember.ContactNum;
+                        cmd.Parameters.Add("@emg", SqlDbType.VarChar).Value = newMember.EmergencyNum;
+                        cmd.Parameters.Add("@year", SqlDbType.VarChar).Value = newMember.startYear.ToString("yyyy-MM-dd");
                         
                         int rowsAdded = cmd.ExecuteNonQuery();
                         //Check if any rows have been added

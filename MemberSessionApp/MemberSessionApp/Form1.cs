@@ -12,7 +12,6 @@ namespace MemberSessionApp
 {
     public partial class Form1 : Form
     {
-        List<Member> mList = new List<Member>();
         public Form1()
         {
             InitializeComponent();
@@ -28,9 +27,7 @@ namespace MemberSessionApp
         {
             SessionPanel.BringToFront();
             SessionPanel.Visible = true;
-            mList = searchMemberPanel.memberList;
-            //SessionPanel.memberList = mList;
-            //SessionPanel.UpdateTable();
+            SessionPanel.UpdateTable();
            
         }
 

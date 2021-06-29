@@ -77,6 +77,7 @@ namespace MemberSessionApp
                 {
                     member = mF.Member;
                     memberList.Add(member);
+                    UpdateTable();
                 }
             }
             catch

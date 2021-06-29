@@ -11,7 +11,6 @@ namespace MemberSessionApp
 {
     public partial class Session : UserControl
     {
-        //public List<Member> memberList = new List<Member>();
         public Session()
         {
             InitializeComponent();
@@ -19,16 +18,15 @@ namespace MemberSessionApp
 
         private void Session_Load(object sender, EventArgs e)
         {
-            //UpdateTable();
             lblDate.Text = DateTime.Now.ToShortDateString();
         }
 
         public void UpdateTable()
         {
-            string query = "select [Members].[PersonID], FirstName, [Members].LastName , [mSessions].SessionType, " +
-                           "[mSessions].SessionTime from Members inner join mSessions on [Members].PersonID = [mSessions].MemberID " +
+            string query = "select [Members].[PersonID], FirstName, [Members].LastName , [mSessions].SessionTime, " +
+                           "[mSessions].SessionType from Members inner join mSessions on [Members].PersonID = [mSessions].MemberID " +
                            "where [mSessions].sessionType like '%" + comboBox1.SelectedItem + "%'" +
-                           "and where [mSessions].sessionDate like '%" + DateTime.Now.ToString("yyyy-MM-dd") + "%';";
+                           "and [mSessions].sessionDate like '%" + DateTime.Now.ToString("yyyy-MM-dd") + "%';";
             
             try
             {
@@ -57,8 +55,8 @@ namespace MemberSessionApp
             gridSession.Columns[0].HeaderText = "ID";
             gridSession.Columns[1].HeaderText = "Last Name";
             gridSession.Columns[2].HeaderText = "First Name";
-            gridSession.Columns[3].HeaderText = "Session Type";
-            gridSession.Columns[4].HeaderText = "Session Time";
+            gridSession.Columns[3].HeaderText = "Session Time";
+            gridSession.Columns[4].HeaderText = "Session Type";
         }
 
         private void StartTable(object sender, EventArgs e)

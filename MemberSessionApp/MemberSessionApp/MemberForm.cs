@@ -12,7 +12,6 @@ namespace MemberSessionApp
     public partial class MemberForm : Form
     {
         Member selectedMember;
-        Session selectedSession;
         public MemberForm()
         {
             InitializeComponent();
@@ -84,15 +83,14 @@ namespace MemberSessionApp
             string dateString = DateTime.Now.ToString("yyyy-MM-dd");
             //Prepare query
 
-            string query = "insert into mSessions(sessionID, sessionType, sessionDate, sessionTime, memberID) " +
-                           "values (@sessionID, @sessionType, @date, @time, @memberID);";
+            string query = "INSERT INTO mSessions(sessionID, sessionType, sessionDate, sessionTime, memberID) " +
+                           "VALUES (@sessionID, @sessionType, @date, @time, @memberID);";
             try
             {
                 //connect to database
                 using (SqlConnection connection = new SqlConnection(Helper.ConVal("Members")))
                 {
                     connection.Open();
-                    MessageBox.Show("Connected");
                     //Execute insert query
                     using (SqlCommand cmd = new SqlCommand(query, connection))
                     {
@@ -108,6 +106,8 @@ namespace MemberSessionApp
                         if (rowsAdded > 0)
                         {
                             MessageBox.Show("Member added");
+                            this.DialogResult = DialogResult.OK;
+                            this.Dispose();
                         }
                         else
                         {
@@ -120,16 +120,75 @@ namespace MemberSessionApp
             {
                 MessageBox.Show("Can not connect to database");
             }
-
-
-
-
-
-            //selectedMember.sessionStart = DateTime.Now;
-            //this.DialogResult = DialogResult.OK;
-            //this.Close();
         }
 
-        
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (DataCheck())
+            {
+                //Prepare query
+                string query = "UPDATE Members SET LastName = @lName, FirstName = @fName, HomeAddress = @address," +
+                                " PostCode = @postCode, ContactNum = @contact, EmergencyContact = @emg WHERE PersonID = @id";
+                try
+                {
+                    //connect to database
+                    using (SqlConnection connection = new SqlConnection(Helper.ConVal("Members")))
+                    {
+                        connection.Open();
+                        //Execute insert query
+                        using (SqlCommand cmd = new SqlCommand(query, connection))
+                        {
+                            //bind parameters to the query string
+                            cmd.Parameters.Add("@lName", SqlDbType.VarChar).Value = txtLastName.Text;
+                            cmd.Parameters.Add("@fName", SqlDbType.VarChar).Value = txtFirstName.Text;
+                            cmd.Parameters.Add("@address", SqlDbType.VarChar).Value = txtAddress.Text;
+                            cmd.Parameters.Add("@postCode", SqlDbType.VarChar).Value = txtPostcode.Text;
+                            cmd.Parameters.Add("@contact", SqlDbType.VarChar).Value = txtContact.Text;
+                            cmd.Parameters.Add("@emg", SqlDbType.VarChar).Value = txtEmgContact.Text;
+                            cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = txtID.Text;
+                            //cmd.Parameters.Add("@year", SqlDbType.VarChar).Value = dateString;
+
+                            int rowsAdded = cmd.ExecuteNonQuery();
+                            //Check if any rows have been added
+                            if (rowsAdded > 0)
+                            {
+                                MessageBox.Show("Member updated");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error");
+                            }
+                        }
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Can not connect to database");
+                }
+            }
+        }
+
+        private bool DataCheck()
+        {
+            if (txtLastName.Text != string.Empty && txtFirstName.Text != string.Empty && txtAddress.Text != string.Empty &&
+                txtPostcode.Text != string.Empty && txtContact.Text != string.Empty && txtEmgContact.Text != string.Empty)
+            {
+                if (txtContact.Text.Length < 11)
+                {
+                    MessageBox.Show("Contact number too short");
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("1 or more data fields are empty");
+                return false;
+            }
+        }
     }
 }
