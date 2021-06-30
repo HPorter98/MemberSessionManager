@@ -43,7 +43,7 @@ namespace MemberSessionApp
             this.gridSession.Location = new System.Drawing.Point(23, 51);
             this.gridSession.Name = "gridSession";
             this.gridSession.RowTemplate.Height = 25;
-            this.gridSession.Size = new System.Drawing.Size(425, 259);
+            this.gridSession.Size = new System.Drawing.Size(505, 344);
             this.gridSession.TabIndex = 0;
             // 
             // comboBox1
@@ -55,7 +55,7 @@ namespace MemberSessionApp
             "< 12",
             "Skateboards only",
             "Girls only"});
-            this.comboBox1.Location = new System.Drawing.Point(75, 22);
+            this.comboBox1.Location = new System.Drawing.Point(87, 22);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 23);
             this.comboBox1.TabIndex = 1;
@@ -64,27 +64,30 @@ namespace MemberSessionApp
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 25);
+            this.label1.Font = new System.Drawing.Font("HoloLens MDL2 Assets", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(23, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 15);
+            this.label1.Size = new System.Drawing.Size(58, 16);
             this.label1.TabIndex = 2;
             this.label1.Text = "Session";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(343, 25);
+            this.label2.Font = new System.Drawing.Font("HoloLens MDL2 Assets", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(400, 21);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 15);
+            this.label2.Size = new System.Drawing.Size(41, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "Date:";
             // 
             // lblDate
             // 
             this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(383, 25);
+            this.lblDate.Font = new System.Drawing.Font("HoloLens MDL2 Assets", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblDate.Location = new System.Drawing.Point(447, 22);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(65, 15);
+            this.lblDate.Size = new System.Drawing.Size(81, 16);
             this.lblDate.TabIndex = 4;
             this.lblDate.Text = "00-00-0000";
             // 
@@ -98,7 +101,7 @@ namespace MemberSessionApp
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.gridSession);
             this.Name = "Session";
-            this.Size = new System.Drawing.Size(494, 333);
+            this.Size = new System.Drawing.Size(550, 410);
             this.Load += new System.EventHandler(this.Session_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridSession)).EndInit();
             this.ResumeLayout(false);

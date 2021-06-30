@@ -139,7 +139,7 @@ namespace MemberSessionApp
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(762, 13);
+            this.button1.Location = new System.Drawing.Point(773, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(26, 23);
             this.button1.TabIndex = 1;
@@ -149,24 +149,24 @@ namespace MemberSessionApp
             // 
             // searchMemberPanel
             // 
-            this.searchMemberPanel.Location = new System.Drawing.Point(255, 70);
+            this.searchMemberPanel.Location = new System.Drawing.Point(206, 28);
             this.searchMemberPanel.Name = "searchMemberPanel";
-            this.searchMemberPanel.Size = new System.Drawing.Size(494, 333);
+            this.searchMemberPanel.Size = new System.Drawing.Size(561, 410);
             this.searchMemberPanel.TabIndex = 2;
             // 
             // SessionPanel
             // 
-            this.SessionPanel.Location = new System.Drawing.Point(255, 89);
+            this.SessionPanel.Location = new System.Drawing.Point(206, 28);
             this.SessionPanel.Name = "SessionPanel";
-            this.SessionPanel.Size = new System.Drawing.Size(494, 333);
+            this.SessionPanel.Size = new System.Drawing.Size(561, 410);
             this.SessionPanel.TabIndex = 4;
             this.SessionPanel.Visible = false;
             // 
             // AddMemberPanel
             // 
-            this.AddMemberPanel.Location = new System.Drawing.Point(267, 89);
+            this.AddMemberPanel.Location = new System.Drawing.Point(206, 28);
             this.AddMemberPanel.Name = "AddMemberPanel";
-            this.AddMemberPanel.Size = new System.Drawing.Size(494, 333);
+            this.AddMemberPanel.Size = new System.Drawing.Size(550, 410);
             this.AddMemberPanel.TabIndex = 5;
             // 
             // Form1
@@ -175,12 +175,11 @@ namespace MemberSessionApp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(89)))), ((int)(((byte)(126)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.AddMemberPanel);
             this.Controls.Add(this.SessionPanel);
             this.Controls.Add(this.searchMemberPanel);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";

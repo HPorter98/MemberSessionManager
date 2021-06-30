@@ -37,28 +37,29 @@ namespace MemberSessionApp
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(63, 30);
+            this.txtSearch.Location = new System.Drawing.Point(70, 50);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(399, 23);
+            this.txtSearch.Size = new System.Drawing.Size(463, 23);
             this.txtSearch.TabIndex = 0;
             this.txtSearch.TextChanged += new System.EventHandler(this.StartTable);
             // 
             // lblSearch
             // 
             this.lblSearch.AutoSize = true;
-            this.lblSearch.Location = new System.Drawing.Point(15, 33);
+            this.lblSearch.Font = new System.Drawing.Font("HoloLens MDL2 Assets", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblSearch.Location = new System.Drawing.Point(15, 50);
             this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(42, 15);
+            this.lblSearch.Size = new System.Drawing.Size(49, 16);
             this.lblSearch.TabIndex = 1;
             this.lblSearch.Text = "Name:";
             // 
             // SearchTable
             // 
             this.SearchTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.SearchTable.Location = new System.Drawing.Point(15, 59);
+            this.SearchTable.Location = new System.Drawing.Point(15, 94);
             this.SearchTable.Name = "SearchTable";
             this.SearchTable.RowTemplate.Height = 25;
-            this.SearchTable.Size = new System.Drawing.Size(466, 248);
+            this.SearchTable.Size = new System.Drawing.Size(518, 290);
             this.SearchTable.TabIndex = 2;
             this.SearchTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.OpenMemberForm);
             // 
@@ -70,7 +71,7 @@ namespace MemberSessionApp
             this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.txtSearch);
             this.Name = "SearchMember";
-            this.Size = new System.Drawing.Size(494, 333);
+            this.Size = new System.Drawing.Size(550, 410);
             ((System.ComponentModel.ISupportInitialize)(this.SearchTable)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

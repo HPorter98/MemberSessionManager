@@ -12,7 +12,7 @@ namespace MemberSessionApp
 {
     public partial class SearchMember : UserControl
     {
-        public List<Member> memberList = new List<Member>();
+        //public List<Member> memberList = new List<Member>();
         public SearchMember()
         {
             InitializeComponent();
@@ -76,8 +76,9 @@ namespace MemberSessionApp
                 if (mF.ShowDialog() == DialogResult.OK)
                 {
                     member = mF.Member;
-                    memberList.Add(member);
+                    //memberList.Add(member);
                     UpdateTable();
+                    txtSearch.Text = string.Empty;
                 }
             }
             catch

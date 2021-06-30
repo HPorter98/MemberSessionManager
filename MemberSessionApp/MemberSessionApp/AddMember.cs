@@ -21,6 +21,7 @@ namespace MemberSessionApp
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            ResetErrorHints();
             //Set new member values
             newMember.FirstName = txtFName.Text;
             newMember.LastName = txtLName.Text;
@@ -37,7 +38,7 @@ namespace MemberSessionApp
             //Check if result is valid
             if (result.IsValid == false)
             {
-                foreach (var f in result.Errors)
+                foreach (ValidationFailure f in result.Errors)
                 {//Set error messages where appropriate
                     if (f.PropertyName == "FirstName")
                     {
@@ -75,51 +76,19 @@ namespace MemberSessionApp
                         lblEmgConError.Visible = true;
                         lblEmgConError.ForeColor = Color.Red;
                     }
+                    
                 }
             }
             else
             {//If vaild, add member to database and show message
-                MessageBox.Show("Member added");
-                
+                SaveMember();
             }
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            //--Old validation--
-
-            ////If data is valid, add member to the database
-            //if (DataCheck())
-            //{
-            //    MessageBox.Show("Accepted");
-            //    //SaveMember();
-            //    ResetValues();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Invalid");
-            //}
-
-            //if (ValidateChildren(ValidationConstraints.Enabled))
-            //{
-            //    MessageBox.Show("Message");
-            //}
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             ResetValues();
+            ResetErrorHints();
         }
 
         private bool DataCheck()
@@ -196,6 +165,16 @@ namespace MemberSessionApp
             txtEmCon.Text = string.Empty;
             txtContactNum.Text = string.Empty;
 
+        }
+
+        private void ResetErrorHints()
+        {
+            lblfNameError.Visible = false;
+            lbllNameError.Visible = false;
+            lblAddressError.Visible = false;
+            lblPostcodeError.Visible = false;
+            lblContactError.Visible = false;
+            lblEmgConError.Visible = false;
         }
     }
 }
