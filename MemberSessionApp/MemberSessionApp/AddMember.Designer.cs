@@ -29,7 +29,6 @@ namespace MemberSessionApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.txtFName = new System.Windows.Forms.TextBox();
             this.txtLName = new System.Windows.Forms.TextBox();
@@ -44,14 +43,12 @@ namespace MemberSessionApp
             this.label8 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.lblfNameError = new System.Windows.Forms.Label();
             this.lbllNameError = new System.Windows.Forms.Label();
             this.lblAddressError = new System.Windows.Forms.Label();
             this.lblPostcodeError = new System.Windows.Forms.Label();
             this.lblEmgConError = new System.Windows.Forms.Label();
             this.lblContactError = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -170,16 +167,13 @@ namespace MemberSessionApp
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
             // lblfNameError
             // 
             this.lblfNameError.AutoSize = true;
+            this.lblfNameError.Font = new System.Drawing.Font("Segoe UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.lblfNameError.Location = new System.Drawing.Point(225, 91);
             this.lblfNameError.Name = "lblfNameError";
-            this.lblfNameError.Size = new System.Drawing.Size(64, 15);
+            this.lblfNameError.Size = new System.Drawing.Size(88, 20);
             this.lblfNameError.TabIndex = 18;
             this.lblfNameError.Text = "First Name";
             this.lblfNameError.TextAlign = System.Drawing.ContentAlignment.BottomRight;
@@ -188,9 +182,10 @@ namespace MemberSessionApp
             // lbllNameError
             // 
             this.lbllNameError.AutoSize = true;
+            this.lbllNameError.Font = new System.Drawing.Font("Segoe UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.lbllNameError.Location = new System.Drawing.Point(225, 135);
             this.lbllNameError.Name = "lbllNameError";
-            this.lbllNameError.Size = new System.Drawing.Size(64, 15);
+            this.lbllNameError.Size = new System.Drawing.Size(88, 20);
             this.lbllNameError.TabIndex = 19;
             this.lbllNameError.Text = "First Name";
             this.lbllNameError.TextAlign = System.Drawing.ContentAlignment.BottomRight;
@@ -199,9 +194,10 @@ namespace MemberSessionApp
             // lblAddressError
             // 
             this.lblAddressError.AutoSize = true;
+            this.lblAddressError.Font = new System.Drawing.Font("Segoe UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.lblAddressError.Location = new System.Drawing.Point(225, 181);
             this.lblAddressError.Name = "lblAddressError";
-            this.lblAddressError.Size = new System.Drawing.Size(64, 15);
+            this.lblAddressError.Size = new System.Drawing.Size(88, 20);
             this.lblAddressError.TabIndex = 20;
             this.lblAddressError.Text = "First Name";
             this.lblAddressError.TextAlign = System.Drawing.ContentAlignment.BottomRight;
@@ -210,9 +206,10 @@ namespace MemberSessionApp
             // lblPostcodeError
             // 
             this.lblPostcodeError.AutoSize = true;
+            this.lblPostcodeError.Font = new System.Drawing.Font("Segoe UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.lblPostcodeError.Location = new System.Drawing.Point(225, 225);
             this.lblPostcodeError.Name = "lblPostcodeError";
-            this.lblPostcodeError.Size = new System.Drawing.Size(64, 15);
+            this.lblPostcodeError.Size = new System.Drawing.Size(88, 20);
             this.lblPostcodeError.TabIndex = 21;
             this.lblPostcodeError.Text = "First Name";
             this.lblPostcodeError.TextAlign = System.Drawing.ContentAlignment.BottomRight;
@@ -221,9 +218,10 @@ namespace MemberSessionApp
             // lblEmgConError
             // 
             this.lblEmgConError.AutoSize = true;
+            this.lblEmgConError.Font = new System.Drawing.Font("Segoe UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.lblEmgConError.Location = new System.Drawing.Point(225, 269);
             this.lblEmgConError.Name = "lblEmgConError";
-            this.lblEmgConError.Size = new System.Drawing.Size(64, 15);
+            this.lblEmgConError.Size = new System.Drawing.Size(88, 20);
             this.lblEmgConError.TabIndex = 22;
             this.lblEmgConError.Text = "First Name";
             this.lblEmgConError.TextAlign = System.Drawing.ContentAlignment.BottomRight;
@@ -232,9 +230,10 @@ namespace MemberSessionApp
             // lblContactError
             // 
             this.lblContactError.AutoSize = true;
+            this.lblContactError.Font = new System.Drawing.Font("Segoe UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.lblContactError.Location = new System.Drawing.Point(225, 313);
             this.lblContactError.Name = "lblContactError";
-            this.lblContactError.Size = new System.Drawing.Size(64, 15);
+            this.lblContactError.Size = new System.Drawing.Size(88, 20);
             this.lblContactError.TabIndex = 23;
             this.lblContactError.Text = "First Name";
             this.lblContactError.TextAlign = System.Drawing.ContentAlignment.BottomRight;
@@ -266,8 +265,6 @@ namespace MemberSessionApp
             this.Controls.Add(this.label1);
             this.Name = "AddMember";
             this.Size = new System.Drawing.Size(550, 410);
-            //this.Load += new System.EventHandler(this.AddMember_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,7 +286,6 @@ namespace MemberSessionApp
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label lblfNameError;
         private System.Windows.Forms.Label lbllNameError;
         private System.Windows.Forms.Label lblAddressError;

@@ -1,4 +1,6 @@
 ﻿using System;
+using FluentValidation;
+using FluentValidation.Results;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -124,48 +126,122 @@ namespace MemberSessionApp
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (DataCheck())
-            {
-                //Prepare query
-                string query = "UPDATE Members SET LastName = @lName, FirstName = @fName, HomeAddress = @address," +
-                                " PostCode = @postCode, ContactNum = @contact, EmergencyContact = @emg WHERE PersonID = @id";
-                try
-                {
-                    //connect to database
-                    using (SqlConnection connection = new SqlConnection(Helper.ConVal("Members")))
-                    {
-                        connection.Open();
-                        //Execute insert query
-                        using (SqlCommand cmd = new SqlCommand(query, connection))
-                        {
-                            //bind parameters to the query string
-                            cmd.Parameters.Add("@lName", SqlDbType.VarChar).Value = txtLastName.Text;
-                            cmd.Parameters.Add("@fName", SqlDbType.VarChar).Value = txtFirstName.Text;
-                            cmd.Parameters.Add("@address", SqlDbType.VarChar).Value = txtAddress.Text;
-                            cmd.Parameters.Add("@postCode", SqlDbType.VarChar).Value = txtPostcode.Text;
-                            cmd.Parameters.Add("@contact", SqlDbType.VarChar).Value = txtContact.Text;
-                            cmd.Parameters.Add("@emg", SqlDbType.VarChar).Value = txtEmgContact.Text;
-                            cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = txtID.Text;
-                            //cmd.Parameters.Add("@year", SqlDbType.VarChar).Value = dateString;
+            //Reset error hints
+            ResetHints();
 
-                            int rowsAdded = cmd.ExecuteNonQuery();
-                            //Check if any rows have been added
-                            if (rowsAdded > 0)
-                            {
-                                MessageBox.Show("Member updated");
-                            }
-                            else
-                            {
-                                MessageBox.Show("Error");
-                            }
+            //Update the selected members values
+            selectedMember.FirstName = txtFirstName.Text;
+            selectedMember.LastName = txtLastName.Text;
+            selectedMember.Address = txtAddress.Text;
+            selectedMember.PostCode = txtPostcode.Text;
+            selectedMember.ContactNum = txtContact.Text;
+            selectedMember.EmergencyNum = txtEmgContact.Text;
+
+            //Validate the selected members new values
+            PersonValidation validator = new PersonValidation();
+            ValidationResult result = validator.Validate(selectedMember);
+
+            //Check if results are valid
+            if (!result.IsValid)
+            {
+                foreach (ValidationFailure f in result.Errors)
+                {
+                    if (f.PropertyName == "FirstName")
+                    {
+                        lblfNameError.Text = f.ErrorMessage;
+                        lblfNameError.Visible = true;
+                        lblfNameError.ForeColor = Color.Red;
+                    }
+                    if (f.PropertyName == "LastName")
+                    {
+                        lbllNameError.Text = f.ErrorMessage;
+                        lbllNameError.Visible = true;
+                        lbllNameError.ForeColor = Color.Red;
+                    }
+                    if (f.PropertyName == "Address")
+                    {
+                        lblAddressError.Text = f.ErrorMessage;
+                        lblAddressError.Visible = true;
+                        lblAddressError.ForeColor = Color.Red;
+                    }
+                    if (f.PropertyName == "PostCode")
+                    {
+                        lblPostcodeError.Text = f.ErrorMessage;
+                        lblPostcodeError.Visible = true;
+                        lblPostcodeError.ForeColor = Color.Red;
+                    }
+                    if (f.PropertyName == "ContactNum")
+                    {
+                        lblContactError.Text = f.ErrorMessage;
+                        lblContactError.Visible = true;
+                        lblContactError.ForeColor = Color.Red;
+                    }
+                    if (f.PropertyName == "EmergencyNum")
+                    {
+                        lblEmgError.Text = f.ErrorMessage;
+                        lblEmgError.Visible = true;
+                        lblEmgError.ForeColor = Color.Red;
+                    }
+                }
+            }
+            else
+            {
+                UpdateMember();               
+            }
+
+        }
+
+        private void UpdateMember()
+        {
+            //Prepare query
+            string query = "UPDATE Members SET LastName = @lName, FirstName = @fName, HomeAddress = @address," +
+                            " PostCode = @postCode, ContactNum = @contact, EmergencyContact = @emg WHERE PersonID = @id";
+            try
+            {
+                //connect to database
+                using (SqlConnection connection = new SqlConnection(Helper.ConVal("Members")))
+                {
+                    connection.Open();
+                    //Execute insert query
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        //bind parameters to the query string
+                        cmd.Parameters.Add("@lName", SqlDbType.VarChar).Value = txtLastName.Text;
+                        cmd.Parameters.Add("@fName", SqlDbType.VarChar).Value = txtFirstName.Text;
+                        cmd.Parameters.Add("@address", SqlDbType.VarChar).Value = txtAddress.Text;
+                        cmd.Parameters.Add("@postCode", SqlDbType.VarChar).Value = txtPostcode.Text;
+                        cmd.Parameters.Add("@contact", SqlDbType.VarChar).Value = txtContact.Text;
+                        cmd.Parameters.Add("@emg", SqlDbType.VarChar).Value = txtEmgContact.Text;
+                        cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = txtID.Text;
+                        //cmd.Parameters.Add("@year", SqlDbType.VarChar).Value = dateString;
+
+                        int rowsAdded = cmd.ExecuteNonQuery();
+                        //Check if any rows have been added
+                        if (rowsAdded > 0)
+                        {
+                            MessageBox.Show("Member updated");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error");
                         }
                     }
                 }
-                catch
-                {
-                    MessageBox.Show("Can not connect to database");
-                }
             }
+            catch
+            {
+                MessageBox.Show("Can not connect to database");
+            }
+        }
+
+        private void ResetHints()
+        {
+            lblfNameError.Visible = false;
+            lbllNameError.Visible = false;
+            lblAddressError.Visible = false;
+            lblPostcodeError.Visible = false;
+            lblContactError.Visible = false;
+            lblEmgError.Visible = false;
         }
 
         private bool DataCheck()

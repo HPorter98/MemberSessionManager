@@ -52,19 +52,25 @@ namespace MemberSessionApp
             this.txtYear = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.cmboSession = new System.Windows.Forms.ComboBox();
+            this.lblfNameError = new System.Windows.Forms.Label();
+            this.lbllNameError = new System.Windows.Forms.Label();
+            this.lblAddressError = new System.Windows.Forms.Label();
+            this.lblPostcodeError = new System.Windows.Forms.Label();
+            this.lblContactError = new System.Windows.Forms.Label();
+            this.lblEmgError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtFirstName
             // 
             this.txtFirstName.Enabled = false;
-            this.txtFirstName.Location = new System.Drawing.Point(204, 79);
+            this.txtFirstName.Location = new System.Drawing.Point(162, 65);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(135, 23);
             this.txtFirstName.TabIndex = 0;
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(54, 327);
+            this.btnEdit.Location = new System.Drawing.Point(12, 461);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(100, 23);
             this.btnEdit.TabIndex = 1;
@@ -76,7 +82,7 @@ namespace MemberSessionApp
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(54, 82);
+            this.label1.Location = new System.Drawing.Point(12, 68);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 20);
             this.label1.TabIndex = 2;
@@ -86,7 +92,7 @@ namespace MemberSessionApp
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(54, 111);
+            this.label2.Location = new System.Drawing.Point(12, 120);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 20);
             this.label2.TabIndex = 4;
@@ -95,7 +101,7 @@ namespace MemberSessionApp
             // txtLastName
             // 
             this.txtLastName.Enabled = false;
-            this.txtLastName.Location = new System.Drawing.Point(204, 108);
+            this.txtLastName.Location = new System.Drawing.Point(162, 117);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(135, 23);
             this.txtLastName.TabIndex = 3;
@@ -104,7 +110,7 @@ namespace MemberSessionApp
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(54, 140);
+            this.label3.Location = new System.Drawing.Point(12, 166);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 20);
             this.label3.TabIndex = 6;
@@ -113,7 +119,7 @@ namespace MemberSessionApp
             // txtAddress
             // 
             this.txtAddress.Enabled = false;
-            this.txtAddress.Location = new System.Drawing.Point(204, 137);
+            this.txtAddress.Location = new System.Drawing.Point(162, 166);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(135, 23);
             this.txtAddress.TabIndex = 5;
@@ -122,7 +128,7 @@ namespace MemberSessionApp
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(54, 169);
+            this.label4.Location = new System.Drawing.Point(12, 216);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(73, 20);
             this.label4.TabIndex = 8;
@@ -131,7 +137,7 @@ namespace MemberSessionApp
             // txtPostcode
             // 
             this.txtPostcode.Enabled = false;
-            this.txtPostcode.Location = new System.Drawing.Point(204, 166);
+            this.txtPostcode.Location = new System.Drawing.Point(162, 213);
             this.txtPostcode.Name = "txtPostcode";
             this.txtPostcode.Size = new System.Drawing.Size(135, 23);
             this.txtPostcode.TabIndex = 7;
@@ -140,7 +146,7 @@ namespace MemberSessionApp
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(54, 198);
+            this.label5.Location = new System.Drawing.Point(12, 269);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(63, 20);
             this.label5.TabIndex = 10;
@@ -149,7 +155,7 @@ namespace MemberSessionApp
             // txtContact
             // 
             this.txtContact.Enabled = false;
-            this.txtContact.Location = new System.Drawing.Point(204, 195);
+            this.txtContact.Location = new System.Drawing.Point(162, 266);
             this.txtContact.Name = "txtContact";
             this.txtContact.Size = new System.Drawing.Size(135, 23);
             this.txtContact.TabIndex = 9;
@@ -158,7 +164,7 @@ namespace MemberSessionApp
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(54, 227);
+            this.label6.Location = new System.Drawing.Point(12, 327);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(144, 20);
             this.label6.TabIndex = 12;
@@ -167,14 +173,14 @@ namespace MemberSessionApp
             // txtEmgContact
             // 
             this.txtEmgContact.Enabled = false;
-            this.txtEmgContact.Location = new System.Drawing.Point(204, 224);
+            this.txtEmgContact.Location = new System.Drawing.Point(162, 324);
             this.txtEmgContact.Name = "txtEmgContact";
             this.txtEmgContact.Size = new System.Drawing.Size(135, 23);
             this.txtEmgContact.TabIndex = 11;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(239, 327);
+            this.btnAdd.Location = new System.Drawing.Point(197, 461);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(100, 23);
             this.btnAdd.TabIndex = 13;
@@ -184,7 +190,7 @@ namespace MemberSessionApp
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(147, 356);
+            this.btnSave.Location = new System.Drawing.Point(105, 490);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(100, 23);
             this.btnSave.TabIndex = 14;
@@ -197,7 +203,7 @@ namespace MemberSessionApp
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(54, 53);
+            this.label7.Location = new System.Drawing.Point(12, 19);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(88, 20);
             this.label7.TabIndex = 16;
@@ -206,7 +212,7 @@ namespace MemberSessionApp
             // txtID
             // 
             this.txtID.Enabled = false;
-            this.txtID.Location = new System.Drawing.Point(204, 50);
+            this.txtID.Location = new System.Drawing.Point(162, 16);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(135, 23);
             this.txtID.TabIndex = 15;
@@ -215,7 +221,7 @@ namespace MemberSessionApp
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(54, 256);
+            this.label8.Location = new System.Drawing.Point(12, 374);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(77, 20);
             this.label8.TabIndex = 18;
@@ -224,7 +230,7 @@ namespace MemberSessionApp
             // txtDay
             // 
             this.txtDay.Enabled = false;
-            this.txtDay.Location = new System.Drawing.Point(204, 253);
+            this.txtDay.Location = new System.Drawing.Point(162, 371);
             this.txtDay.Name = "txtDay";
             this.txtDay.Size = new System.Drawing.Size(31, 23);
             this.txtDay.TabIndex = 17;
@@ -232,7 +238,7 @@ namespace MemberSessionApp
             // txtMonth
             // 
             this.txtMonth.Enabled = false;
-            this.txtMonth.Location = new System.Drawing.Point(241, 253);
+            this.txtMonth.Location = new System.Drawing.Point(199, 371);
             this.txtMonth.Name = "txtMonth";
             this.txtMonth.Size = new System.Drawing.Size(31, 23);
             this.txtMonth.TabIndex = 19;
@@ -240,7 +246,7 @@ namespace MemberSessionApp
             // txtYear
             // 
             this.txtYear.Enabled = false;
-            this.txtYear.Location = new System.Drawing.Point(278, 253);
+            this.txtYear.Location = new System.Drawing.Point(236, 371);
             this.txtYear.Name = "txtYear";
             this.txtYear.Size = new System.Drawing.Size(61, 23);
             this.txtYear.TabIndex = 20;
@@ -249,7 +255,7 @@ namespace MemberSessionApp
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(54, 289);
+            this.label9.Location = new System.Drawing.Point(12, 410);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(98, 20);
             this.label9.TabIndex = 22;
@@ -264,16 +270,88 @@ namespace MemberSessionApp
             "< 12",
             "Skateboards only",
             "Girls only"});
-            this.cmboSession.Location = new System.Drawing.Point(204, 286);
+            this.cmboSession.Location = new System.Drawing.Point(162, 407);
             this.cmboSession.Name = "cmboSession";
             this.cmboSession.Size = new System.Drawing.Size(135, 23);
             this.cmboSession.TabIndex = 23;
+            // 
+            // lblfNameError
+            // 
+            this.lblfNameError.AutoSize = true;
+            this.lblfNameError.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.lblfNameError.Location = new System.Drawing.Point(161, 91);
+            this.lblfNameError.Name = "lblfNameError";
+            this.lblfNameError.Size = new System.Drawing.Size(45, 21);
+            this.lblfNameError.TabIndex = 24;
+            this.lblfNameError.Text = "error";
+            this.lblfNameError.Visible = false;
+            // 
+            // lbllNameError
+            // 
+            this.lbllNameError.AutoSize = true;
+            this.lbllNameError.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.lbllNameError.Location = new System.Drawing.Point(162, 143);
+            this.lbllNameError.Name = "lbllNameError";
+            this.lbllNameError.Size = new System.Drawing.Size(45, 21);
+            this.lbllNameError.TabIndex = 25;
+            this.lbllNameError.Text = "error";
+            this.lbllNameError.Visible = false;
+            // 
+            // lblAddressError
+            // 
+            this.lblAddressError.AutoSize = true;
+            this.lblAddressError.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.lblAddressError.Location = new System.Drawing.Point(162, 192);
+            this.lblAddressError.Name = "lblAddressError";
+            this.lblAddressError.Size = new System.Drawing.Size(45, 21);
+            this.lblAddressError.TabIndex = 26;
+            this.lblAddressError.Text = "error";
+            this.lblAddressError.Visible = false;
+            // 
+            // lblPostcodeError
+            // 
+            this.lblPostcodeError.AutoSize = true;
+            this.lblPostcodeError.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.lblPostcodeError.Location = new System.Drawing.Point(162, 239);
+            this.lblPostcodeError.Name = "lblPostcodeError";
+            this.lblPostcodeError.Size = new System.Drawing.Size(45, 21);
+            this.lblPostcodeError.TabIndex = 27;
+            this.lblPostcodeError.Text = "error";
+            this.lblPostcodeError.Visible = false;
+            // 
+            // lblContactError
+            // 
+            this.lblContactError.AutoSize = true;
+            this.lblContactError.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.lblContactError.Location = new System.Drawing.Point(162, 292);
+            this.lblContactError.Name = "lblContactError";
+            this.lblContactError.Size = new System.Drawing.Size(45, 21);
+            this.lblContactError.TabIndex = 28;
+            this.lblContactError.Text = "error";
+            this.lblContactError.Visible = false;
+            // 
+            // lblEmgError
+            // 
+            this.lblEmgError.AutoSize = true;
+            this.lblEmgError.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.lblEmgError.Location = new System.Drawing.Point(162, 350);
+            this.lblEmgError.Name = "lblEmgError";
+            this.lblEmgError.Size = new System.Drawing.Size(45, 21);
+            this.lblEmgError.TabIndex = 29;
+            this.lblEmgError.Text = "error";
+            this.lblEmgError.Visible = false;
             // 
             // MemberForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(392, 450);
+            this.ClientSize = new System.Drawing.Size(392, 570);
+            this.Controls.Add(this.lblEmgError);
+            this.Controls.Add(this.lblContactError);
+            this.Controls.Add(this.lblPostcodeError);
+            this.Controls.Add(this.lblAddressError);
+            this.Controls.Add(this.lbllNameError);
+            this.Controls.Add(this.lblfNameError);
             this.Controls.Add(this.cmboSession);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtYear);
@@ -331,5 +409,11 @@ namespace MemberSessionApp
         private System.Windows.Forms.TextBox txtYear;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cmboSession;
+        private System.Windows.Forms.Label lblfNameError;
+        private System.Windows.Forms.Label lbllNameError;
+        private System.Windows.Forms.Label lblAddressError;
+        private System.Windows.Forms.Label lblPostcodeError;
+        private System.Windows.Forms.Label lblContactError;
+        private System.Windows.Forms.Label lblEmgError;
     }
 }

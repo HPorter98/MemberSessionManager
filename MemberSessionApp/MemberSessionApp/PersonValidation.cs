@@ -13,30 +13,30 @@ namespace MemberSessionApp
             RuleFor(member => member.FirstName)
                 .Cascade(CascadeMode.Stop)
                 .NotEmpty().WithMessage("{PropertyName} is empty")
-                .Length(2, 50)
+                .Length(2, 50).WithMessage("{PropertyName} length is invalid")
                 .Must(IsValidName).WithMessage("Invalid name");
 
             RuleFor(member => member.LastName)
                 .Cascade(CascadeMode.Stop)
                 .NotEmpty().WithMessage("{PropertyName} is empty")
-                .Length(2, 50)
+                .Length(2, 50).WithMessage("{PropertyName} length is invalid")
                 .Must(IsValidName).WithMessage("Invalid name");
 
             RuleFor(member => member.Address)
                 .Cascade(CascadeMode.Stop)
                 .NotEmpty().WithMessage("{PropertyName} is empty")
-                .Length(2, 50);
+                .Length(2, 50).WithMessage("{PropertyName} length is invalid");
 
             RuleFor(member => member.PostCode)
                 .Cascade(CascadeMode.Stop)
                 .NotEmpty().WithMessage("{PropertyName} is empty")
-                .Length(2, 10);
+                .Length(2, 10).WithMessage("{PropertyName} length is invalid");
 
             RuleFor(member => member.ContactNum)
                 .Cascade(CascadeMode.Stop)
                 .NotEmpty().WithMessage("{PropertyName} is empty")
                 .Must(IsValidNumber).WithMessage("Number is invalid")
-                .Length(11, 15).WithMessage("{PropertyName} must be 11 digits");
+                .Length(11, 15).WithMessage("{PropertyName} must be 11-15 digits");
                 
 
             RuleFor(member => member.EmergencyNum)
