@@ -58,6 +58,7 @@ namespace MemberSessionApp
             this.lblPostcodeError = new System.Windows.Forms.Label();
             this.lblContactError = new System.Windows.Forms.Label();
             this.lblEmgError = new System.Windows.Forms.Label();
+            this.dateStartYear = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // txtFirstName
@@ -230,7 +231,7 @@ namespace MemberSessionApp
             // txtDay
             // 
             this.txtDay.Enabled = false;
-            this.txtDay.Location = new System.Drawing.Point(162, 371);
+            this.txtDay.Location = new System.Drawing.Point(143, 535);
             this.txtDay.Name = "txtDay";
             this.txtDay.Size = new System.Drawing.Size(31, 23);
             this.txtDay.TabIndex = 17;
@@ -238,7 +239,7 @@ namespace MemberSessionApp
             // txtMonth
             // 
             this.txtMonth.Enabled = false;
-            this.txtMonth.Location = new System.Drawing.Point(199, 371);
+            this.txtMonth.Location = new System.Drawing.Point(180, 535);
             this.txtMonth.Name = "txtMonth";
             this.txtMonth.Size = new System.Drawing.Size(31, 23);
             this.txtMonth.TabIndex = 19;
@@ -246,7 +247,7 @@ namespace MemberSessionApp
             // txtYear
             // 
             this.txtYear.Enabled = false;
-            this.txtYear.Location = new System.Drawing.Point(236, 371);
+            this.txtYear.Location = new System.Drawing.Point(217, 535);
             this.txtYear.Name = "txtYear";
             this.txtYear.Size = new System.Drawing.Size(61, 23);
             this.txtYear.TabIndex = 20;
@@ -341,11 +342,21 @@ namespace MemberSessionApp
             this.lblEmgError.Text = "error";
             this.lblEmgError.Visible = false;
             // 
+            // dateStartYear
+            // 
+            this.dateStartYear.Enabled = false;
+            this.dateStartYear.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateStartYear.Location = new System.Drawing.Point(162, 370);
+            this.dateStartYear.Name = "dateStartYear";
+            this.dateStartYear.Size = new System.Drawing.Size(135, 23);
+            this.dateStartYear.TabIndex = 30;
+            // 
             // MemberForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(392, 570);
+            this.Controls.Add(this.dateStartYear);
             this.Controls.Add(this.lblEmgError);
             this.Controls.Add(this.lblContactError);
             this.Controls.Add(this.lblPostcodeError);
@@ -415,5 +426,6 @@ namespace MemberSessionApp
         private System.Windows.Forms.Label lblPostcodeError;
         private System.Windows.Forms.Label lblContactError;
         private System.Windows.Forms.Label lblEmgError;
+        private System.Windows.Forms.DateTimePicker dateStartYear;
     }
 }

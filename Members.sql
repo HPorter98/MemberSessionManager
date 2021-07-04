@@ -18,26 +18,16 @@ INSERT INTO Members(LastName, FirstName, HomeAddress, PostCode, ContactNum, Emer
 INSERT INTO Members(LastName, FirstName, HomeAddress, PostCode, ContactNum, EmergencyContact, StartYear) values('Doe', 'Jane', '123 Address Street', 
 'LC12 3ST', '07920310230', '07920310230', '2021-06-21');
 
-create table mSessions(
-	ID int primary key identity(1,1) not null,
-	sessionID varchar(30) not null,
-	sessionType varchar(30) not null,
-	sessionDate date not null,
-	sessionTime varchar(30) not null,
-	memberID int foreign key references Members(PersonID)
+create table SessionDetails(
+	SessionID varchar(50) primary key,
+	SessionStartTime varchar(5),
+	SessionEndTime varchar(5),
+	SessionDate date,
+	SessionType varchar(30)
 )
 
-/* example data */
-
-insert into mSessions(sessionID, sessionType, sessionDate, sessionTime, memberID) values ('toddler/2021-06-26', 'toddler', '2021-06-26', '14:00', 1);
-
-insert into mSessions(sessionID, sessionType, sessionDate, sessionTime, memberID) values ('openAccess/2021-06-26', 'openAccess', '2021-06-26', '16:00', 5);
-
-insert into mSessions(sessionID, sessionType, sessionDate, sessionTime, memberID) values ('toddler/2021-06-26', 'toddler', '2021-06-26', '14:00', 4);
-
-insert into mSessions(sessionID, sessionType, sessionDate, sessionTime, memberID) values ('openAccess/2021-06-26', 'openAccess', '2021-06-26', '16:00', 6);
-
-/* query to select from both tables */
-
-select [Members].[PersonID], FirstName, [Members].LastName , [mSessions].SessionType, [mSessions].SessionTime from Members inner join mSessions on [Members].PersonID = [mSessions].MemberID 
-where [mSessions].SessionType = 'toddler';
+create table MemberSession(
+	ID int primary key identity(1,1),
+	SessionID varchar(50) foreign key references SessionDetails(SessionID),
+	PersonID int foreign key references Members(PersonID)
+)

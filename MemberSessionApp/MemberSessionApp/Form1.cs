@@ -47,5 +47,11 @@ namespace MemberSessionApp
             AddMemberPanel.BringToFront();
             SessionPanel.Visible = false;
         }
+
+        private void btnPrevious_Click(object sender, EventArgs e)
+        {
+            sessionHistoryPanel.BringToFront();
+            sessionHistoryPanel.UpdateTable();
+        }   
     }
 }

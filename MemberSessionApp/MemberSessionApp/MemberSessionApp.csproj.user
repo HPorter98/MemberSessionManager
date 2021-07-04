@@ -16,5 +16,8 @@
     <Compile Update="Session.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="SessionHistory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

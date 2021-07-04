@@ -289,7 +289,6 @@ namespace MemberSessionApp
         private System.Windows.Forms.Label lblfNameError;
         private System.Windows.Forms.Label lbllNameError;
         private System.Windows.Forms.Label lblAddressError;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblContactError;
         private System.Windows.Forms.Label lblEmgConError;
         private System.Windows.Forms.Label lblPostcodeError;

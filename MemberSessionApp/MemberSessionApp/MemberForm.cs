@@ -19,23 +19,21 @@ namespace MemberSessionApp
             InitializeComponent();
         }
 
+        public Member Member
+        {
+            get { return selectedMember; }
+            set { selectedMember = value; }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
+            FillValues();
             ToggleEdit();
         }
 
         private void MemberForm_Load(object sender, EventArgs e)
         {
-            txtID.Text = selectedMember.ID.ToString();
-            txtFirstName.Text = selectedMember.FirstName;
-            txtLastName.Text = selectedMember.LastName;
-            txtAddress.Text = selectedMember.Address;
-            txtPostcode.Text = selectedMember.PostCode;
-            txtContact.Text = selectedMember.ContactNum;
-            txtEmgContact.Text = selectedMember.EmergencyNum;
-            txtDay.Text = selectedMember.startYear.Day.ToString();
-            txtMonth.Text = selectedMember.startYear.Month.ToString();
-            txtYear.Text = selectedMember.startYear.Year.ToString();
+            FillValues();
         }
 
         private void ToggleEdit()
@@ -73,54 +71,56 @@ namespace MemberSessionApp
             }
         }
 
-        public Member Member
-        {
-            get { return selectedMember; }
-            set { selectedMember = value; }
-        }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             //Retrieve todays date
             string dateString = DateTime.Now.ToString("yyyy-MM-dd");
-            //Prepare query
 
-            string query = "INSERT INTO mSessions(sessionID, sessionType, sessionDate, sessionTime, memberID) " +
-                           "VALUES (@sessionID, @sessionType, @date, @time, @memberID);";
-            try
+            if (cmboSession.SelectedIndex < 0)
             {
-                //connect to database
-                using (SqlConnection connection = new SqlConnection(Helper.ConVal("Members")))
+                MessageBox.Show("Select Session Type!");
+            }
+            else
+            {
+                string sessionID = cmboSession.SelectedItem.ToString() + "/" + dateString;
+                
+                //Prepare query
+                string query = $"Select SessionID from SessionDetails WHERE SessionID = '{sessionID}';";
+                try
                 {
-                    connection.Open();
-                    //Execute insert query
-                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    bool result;
+                    //connect to database
+                    using (SqlConnection connection = new SqlConnection(Helper.ConVal("Members")))
                     {
-                        //bind parameters to the query string
-                        cmd.Parameters.Add("@sessionID", SqlDbType.VarChar).Value = cmboSession.SelectedItem.ToString() +"/"+ dateString;
-                        cmd.Parameters.Add("@sessionType", SqlDbType.VarChar).Value = cmboSession.SelectedItem.ToString();
-                        cmd.Parameters.Add("@date", SqlDbType.VarChar).Value = dateString;
-                        cmd.Parameters.Add("@time", SqlDbType.VarChar).Value = DateTime.Now.ToShortTimeString();
-                        cmd.Parameters.Add("@memberID", SqlDbType.Int).Value = int.Parse(txtID.Text);
+                        connection.Open();
 
-                        int rowsAdded = cmd.ExecuteNonQuery();
-                        //Check if any rows have been added
-                        if (rowsAdded > 0)
+                        SqlCommand cmd = new SqlCommand(query, connection);
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        result = reader.HasRows;
+                        reader.Close();
+
+
+                        if (result)
                         {
-                            MessageBox.Show("Member added");
+                            //Add member to a session
+                            AddMemberToSession(connection, sessionID);
                             this.DialogResult = DialogResult.OK;
                             this.Dispose();
                         }
                         else
                         {
-                            MessageBox.Show("Error");
+                            //Create new session and add member to new session
+                            CreateSession(connection, sessionID, dateString);
+                            AddMemberToSession(connection, sessionID);
+                            this.DialogResult = DialogResult.OK;
+                            this.Dispose();
                         }
                     }
                 }
-            }
-            catch
-            {
-                MessageBox.Show("Can not connect to database");
+                catch
+                {
+                    MessageBox.Show("Can not connect to database");
+                }
             }
         }
 
@@ -244,26 +244,66 @@ namespace MemberSessionApp
             lblEmgError.Visible = false;
         }
 
-        private bool DataCheck()
+        private void FillValues()
         {
-            if (txtLastName.Text != string.Empty && txtFirstName.Text != string.Empty && txtAddress.Text != string.Empty &&
-                txtPostcode.Text != string.Empty && txtContact.Text != string.Empty && txtEmgContact.Text != string.Empty)
+            txtID.Text = selectedMember.ID.ToString();
+            txtFirstName.Text = selectedMember.FirstName;
+            txtLastName.Text = selectedMember.LastName;
+            txtAddress.Text = selectedMember.Address;
+            txtPostcode.Text = selectedMember.PostCode;
+            txtContact.Text = selectedMember.ContactNum;
+            txtEmgContact.Text = selectedMember.EmergencyNum;
+            dateStartYear.Value = selectedMember.startYear;
+            txtDay.Text = selectedMember.startYear.Day.ToString();
+            txtMonth.Text = selectedMember.startYear.Month.ToString();
+            txtYear.Text = selectedMember.startYear.Year.ToString();
+        }
+    
+        private void AddMemberToSession(SqlConnection connection, string sessionID)
+        {
+            string query = "INSERT INTO MemberSession(SessionID, PersonID) VALUES (@id, @memberID);";
+            using (SqlCommand cmd = new SqlCommand(query, connection))
             {
-                if (txtContact.Text.Length < 11)
+                //Bind parameters to query
+                cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = sessionID;
+                cmd.Parameters.Add("@memberID", SqlDbType.Int).Value = int.Parse(txtID.Text);
+
+                //Store and check if any rows were effected
+                int rowsAdded = cmd.ExecuteNonQuery();
+                if (rowsAdded > 0)
                 {
-                    MessageBox.Show("Contact number too short");
-                    return false;
+                    MessageBox.Show("Member added to session");
                 }
                 else
                 {
-                    return true;
+                    MessageBox.Show("Error");
                 }
-
             }
-            else
+        }
+
+        private void CreateSession(SqlConnection connection, string sessionID, string dateString)
+        {
+            string query = "INSERT INTO SessionDetails (SessionID, SessionStartTime, SessionEndTime, SessionDate, SessionType) VALUES (@id, @start, @end, @date, @type);";
+            using (SqlCommand createSession = new SqlCommand(query, connection))
             {
-                MessageBox.Show("1 or more data fields are empty");
-                return false;
+                //Bind parameters to query
+                createSession.Parameters.Add("@id", SqlDbType.VarChar).Value = sessionID;
+                createSession.Parameters.Add("@start", SqlDbType.VarChar).Value = DateTime.Now.ToShortTimeString();
+                createSession.Parameters.Add("@end", SqlDbType.VarChar).Value = DateTime.Now.AddHours(2).ToShortTimeString();
+                createSession.Parameters.Add("@date", SqlDbType.VarChar).Value = dateString;
+                createSession.Parameters.Add("@type", SqlDbType.VarChar).Value = cmboSession.SelectedItem.ToString();
+
+                //Store number of rows affected by the query
+                int rowsAdded = createSession.ExecuteNonQuery();
+
+                if (rowsAdded > 0)
+                {//If rows effected is greater than 0
+                    MessageBox.Show("Session created");
+                }
+                else
+                {
+                    MessageBox.Show("Error");
+                }
             }
         }
     }

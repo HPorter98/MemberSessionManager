@@ -19,14 +19,20 @@ namespace MemberSessionApp
         private void Session_Load(object sender, EventArgs e)
         {
             lblDate.Text = DateTime.Now.ToShortDateString();
+            comboBox1.SelectedIndex = 0;
         }
 
         public void UpdateTable()
         {
-            string query = "select [Members].[PersonID], FirstName, [Members].LastName , [mSessions].SessionTime, " +
-                           "[mSessions].SessionType from Members inner join mSessions on [Members].PersonID = [mSessions].MemberID " +
-                           "where [mSessions].sessionType like '%" + comboBox1.SelectedItem + "%'" +
-                           "and [mSessions].sessionDate like '%" + DateTime.Now.ToString("yyyy-MM-dd") + "%';";
+            string sessionID = comboBox1.SelectedItem + "/" + DateTime.Now.ToString("yyyy-MM-dd");
+            //string query = "select [Members].[PersonID], FirstName, [Members].LastName , [mSessions].SessionTime, " +
+            //               "[mSessions].SessionType from Members inner join MemberSession on [Members].PersonID = [mSessions].MemberID " +
+            //               "where [mSessions].sessionType like '%" + comboBox1.SelectedItem + "%'" +
+            //               "and [mSessions].sessionDate like '%" + DateTime.Now.ToString("yyyy-MM-dd") + "%';";
+            string query = "select [Members].[PersonID], [Members].FirstName, [Members].LastName, [SessionDetails].SessionEndTime from Members " +
+                           "inner join MemberSession on [Members].PersonID = [MemberSession].PersonID " +
+                           "inner join SessionDetails on[SessionDetails].SessionID = [MemberSession].SessionID " +
+                           $"where[MemberSession].SessionID = '{sessionID}';";
             
             try
             {
@@ -36,6 +42,7 @@ namespace MemberSessionApp
                 {
                     connection.Open();
 
+                    
                     DataTable search = new DataTable();
 
                     //Fill the data grid table with data retrieve from database
@@ -55,8 +62,7 @@ namespace MemberSessionApp
             gridSession.Columns[0].HeaderText = "ID";
             gridSession.Columns[1].HeaderText = "Last Name";
             gridSession.Columns[2].HeaderText = "First Name";
-            gridSession.Columns[3].HeaderText = "Session Time";
-            gridSession.Columns[4].HeaderText = "Session Type";
+            gridSession.Columns[3].HeaderText = "Session Finish";
         }
 
         private void StartTable(object sender, EventArgs e)

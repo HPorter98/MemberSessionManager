@@ -41,6 +41,7 @@ namespace MemberSessionApp
             this.searchMemberPanel = new MemberSessionApp.SearchMember();
             this.SessionPanel = new MemberSessionApp.Session();
             this.AddMemberPanel = new MemberSessionApp.AddMember();
+            this.sessionHistoryPanel = new MemberSessionApp.SessionHistory();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -86,6 +87,7 @@ namespace MemberSessionApp
             this.btnPrevious.TabIndex = 3;
             this.btnPrevious.Text = "Session History";
             this.btnPrevious.UseVisualStyleBackColor = true;
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
             // btnSession
             // 
@@ -169,12 +171,20 @@ namespace MemberSessionApp
             this.AddMemberPanel.Size = new System.Drawing.Size(550, 410);
             this.AddMemberPanel.TabIndex = 5;
             // 
+            // sessionHistoryPanel
+            // 
+            this.sessionHistoryPanel.Location = new System.Drawing.Point(206, 28);
+            this.sessionHistoryPanel.Name = "sessionHistoryPanel";
+            this.sessionHistoryPanel.Size = new System.Drawing.Size(550, 410);
+            this.sessionHistoryPanel.TabIndex = 6;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(89)))), ((int)(((byte)(126)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.sessionHistoryPanel);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.AddMemberPanel);
             this.Controls.Add(this.SessionPanel);
@@ -204,6 +214,7 @@ namespace MemberSessionApp
         private AddMember AddMemberPanel;
         private SearchMember searchMemberPanel;
         public Session SessionPanel;
+        private SessionHistory sessionHistoryPanel;
     }
 }
 
