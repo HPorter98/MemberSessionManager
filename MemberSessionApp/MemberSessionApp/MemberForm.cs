@@ -49,10 +49,10 @@ namespace MemberSessionApp
                 txtPostcode.Enabled = true;
                 txtContact.Enabled = true;
                 txtEmgContact.Enabled = true;
-                txtDay.Enabled = true;
-                txtMonth.Enabled = true;
-                txtYear.Enabled = true;
+
                 btnSave.Visible = true;
+                btnDelete.Visible = true;
+
                 btnEdit.Text = "Cancel";
             }
             else
@@ -63,10 +63,10 @@ namespace MemberSessionApp
                 txtPostcode.Enabled = false;
                 txtContact.Enabled = false;
                 txtEmgContact.Enabled = false;
-                txtDay.Enabled = false;
-                txtMonth.Enabled = false;
-                txtYear.Enabled = false;
+
                 btnSave.Visible = false;
+                btnDelete.Visible = false;
+
                 btnEdit.Text = "Edit";
             }
         }
@@ -254,9 +254,6 @@ namespace MemberSessionApp
             txtContact.Text = selectedMember.ContactNum;
             txtEmgContact.Text = selectedMember.EmergencyNum;
             dateStartYear.Value = selectedMember.startYear;
-            txtDay.Text = selectedMember.startYear.Day.ToString();
-            txtMonth.Text = selectedMember.startYear.Month.ToString();
-            txtYear.Text = selectedMember.startYear.Year.ToString();
         }
     
         private void AddMemberToSession(SqlConnection connection, string sessionID)
@@ -299,6 +296,29 @@ namespace MemberSessionApp
                 if (rowsAdded > 0)
                 {//If rows effected is greater than 0
                     MessageBox.Show("Session created");
+                }
+                else
+                {
+                    MessageBox.Show("Error");
+                }
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            string query = $"DELETE FROM Members WHERE PersonID = {int.Parse(txtID.Text)}";
+            using (SqlConnection connection = new SqlConnection(Helper.ConVal("Members")))
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                connection.Open();
+
+                int rowsDeleted = command.ExecuteNonQuery();
+
+                if (rowsDeleted > 0)
+                {
+                    MessageBox.Show("Member removed");
+                    this.DialogResult = DialogResult.OK;
+                    this.Dispose();
                 }
                 else
                 {

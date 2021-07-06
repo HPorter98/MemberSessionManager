@@ -25,10 +25,6 @@ namespace MemberSessionApp
         public void UpdateTable()
         {
             string sessionID = comboBox1.SelectedItem + "/" + DateTime.Now.ToString("yyyy-MM-dd");
-            //string query = "select [Members].[PersonID], FirstName, [Members].LastName , [mSessions].SessionTime, " +
-            //               "[mSessions].SessionType from Members inner join MemberSession on [Members].PersonID = [mSessions].MemberID " +
-            //               "where [mSessions].sessionType like '%" + comboBox1.SelectedItem + "%'" +
-            //               "and [mSessions].sessionDate like '%" + DateTime.Now.ToString("yyyy-MM-dd") + "%';";
             string query = "select [Members].[PersonID], [Members].FirstName, [Members].LastName, [SessionDetails].SessionEndTime from Members " +
                            "inner join MemberSession on [Members].PersonID = [MemberSession].PersonID " +
                            "inner join SessionDetails on[SessionDetails].SessionID = [MemberSession].SessionID " +
@@ -59,10 +55,18 @@ namespace MemberSessionApp
 
         public void FormatTable()
         {
+            gridSession.RowHeadersVisible = false;
+
             gridSession.Columns[0].HeaderText = "ID";
             gridSession.Columns[1].HeaderText = "Last Name";
             gridSession.Columns[2].HeaderText = "First Name";
             gridSession.Columns[3].HeaderText = "Session Finish";
+
+            gridSession.Columns[0].Width = gridSession.Width / 4;
+            gridSession.Columns[1].Width = gridSession.Width / 4;
+            gridSession.Columns[2].Width = gridSession.Width / 4;
+            gridSession.Columns[3].Width = gridSession.Width / 4;
+
         }
 
         private void StartTable(object sender, EventArgs e)

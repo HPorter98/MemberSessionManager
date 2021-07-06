@@ -82,6 +82,7 @@ namespace MemberSessionApp
             else
             {//If vaild, add member to database and show message
                 SaveMember();
+                ResetValues();
             }
         }
 
@@ -123,7 +124,7 @@ namespace MemberSessionApp
                 using (SqlConnection connection = new SqlConnection(Helper.ConVal("Members")))
                 {
                     connection.Open();
-                    MessageBox.Show("Connected");
+
                     //Execute insert query
                     using (SqlCommand cmd = new SqlCommand(query, connection))
                     {
@@ -169,6 +170,7 @@ namespace MemberSessionApp
 
         private void ResetErrorHints()
         {
+            //Hide all error hints
             lblfNameError.Visible = false;
             lbllNameError.Visible = false;
             lblAddressError.Visible = false;

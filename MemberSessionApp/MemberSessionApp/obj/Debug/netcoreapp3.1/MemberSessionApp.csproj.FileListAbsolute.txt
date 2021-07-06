@@ -28,3 +28,4 @@ C:\Users\harry\Documents\VS Projects\MemberSessionManager\MemberSessionApp\Membe
 C:\Users\harry\Documents\VS Projects\MemberSessionManager\MemberSessionApp\MemberSessionApp\obj\Debug\netcoreapp3.1\MemberSessionApp.MemberForm.resources
 C:\Users\harry\Documents\VS Projects\MemberSessionManager\MemberSessionApp\MemberSessionApp\bin\Debug\netcoreapp3.1\FluentValidation.dll
 C:\Users\harry\Documents\VS Projects\MemberSessionManager\MemberSessionApp\MemberSessionApp\obj\Debug\netcoreapp3.1\MemberSessionApp.SessionHistory.resources
+C:\Users\harry\Documents\VS Projects\MemberSessionManager\MemberSessionApp\MemberSessionApp\obj\Debug\netcoreapp3.1\MemberSessionApp.SessionForm.resources

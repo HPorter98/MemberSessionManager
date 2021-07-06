@@ -56,9 +56,15 @@ namespace MemberSessionApp
 
         public void FormatTable()
         {
+            SearchTable.RowHeadersVisible = false;
+
             SearchTable.Columns[0].HeaderText = "ID";
             SearchTable.Columns[1].HeaderText = "Last Name";
             SearchTable.Columns[2].HeaderText = "First Name";
+
+            SearchTable.Columns[0].Width = SearchTable.Width / 3;
+            SearchTable.Columns[1].Width = SearchTable.Width / 3;
+            SearchTable.Columns[2].Width = SearchTable.Width / 3;
         }
 
         private void OpenMemberForm(object sender, DataGridViewCellEventArgs e)
@@ -76,7 +82,6 @@ namespace MemberSessionApp
                 if (mF.ShowDialog() == DialogResult.OK)
                 {
                     member = mF.Member;
-                    //memberList.Add(member);
                     UpdateTable();
                     txtSearch.Text = string.Empty;
                 }

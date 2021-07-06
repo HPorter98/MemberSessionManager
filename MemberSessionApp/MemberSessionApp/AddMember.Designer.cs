@@ -54,9 +54,10 @@ namespace MemberSessionApp
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(155, 68);
+            this.label1.Font = new System.Drawing.Font("HoloLens MDL2 Assets", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(141, 65);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 15);
+            this.label1.Size = new System.Drawing.Size(78, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "First Name";
             // 
@@ -77,9 +78,10 @@ namespace MemberSessionApp
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(156, 112);
+            this.label2.Font = new System.Drawing.Font("HoloLens MDL2 Assets", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(142, 109);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 15);
+            this.label2.Size = new System.Drawing.Size(77, 16);
             this.label2.TabIndex = 2;
             this.label2.Text = "Last Name";
             // 
@@ -93,9 +95,10 @@ namespace MemberSessionApp
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(170, 156);
+            this.label3.Font = new System.Drawing.Font("HoloLens MDL2 Assets", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(161, 153);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 15);
+            this.label3.Size = new System.Drawing.Size(58, 16);
             this.label3.TabIndex = 4;
             this.label3.Text = "Address";
             // 
@@ -109,9 +112,10 @@ namespace MemberSessionApp
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(158, 202);
+            this.label4.Font = new System.Drawing.Font("HoloLens MDL2 Assets", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(146, 198);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 15);
+            this.label4.Size = new System.Drawing.Size(73, 16);
             this.label4.TabIndex = 6;
             this.label4.Text = "Post Code";
             // 
@@ -125,9 +129,10 @@ namespace MemberSessionApp
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(108, 246);
+            this.label7.Font = new System.Drawing.Font("HoloLens MDL2 Assets", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(88, 242);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(111, 15);
+            this.label7.Size = new System.Drawing.Size(131, 16);
             this.label7.TabIndex = 12;
             this.label7.Text = "Emergency Contact";
             // 
@@ -141,9 +146,10 @@ namespace MemberSessionApp
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(140, 290);
+            this.label8.Font = new System.Drawing.Font("HoloLens MDL2 Assets", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(129, 287);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(79, 15);
+            this.label8.Size = new System.Drawing.Size(90, 16);
             this.label8.TabIndex = 14;
             this.label8.Text = "Contact Num";
             // 

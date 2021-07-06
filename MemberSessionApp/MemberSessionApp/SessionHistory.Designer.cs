@@ -45,8 +45,10 @@ namespace MemberSessionApp
             this.sessionGrid.Location = new System.Drawing.Point(25, 104);
             this.sessionGrid.Name = "sessionGrid";
             this.sessionGrid.RowTemplate.Height = 25;
-            this.sessionGrid.Size = new System.Drawing.Size(500, 290);
+            this.sessionGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.sessionGrid.Size = new System.Drawing.Size(525, 290);
             this.sessionGrid.TabIndex = 0;
+            this.sessionGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.OpenForm);
             // 
             // cmbSession
             // 
@@ -120,7 +122,7 @@ namespace MemberSessionApp
             this.Controls.Add(this.cmbSession);
             this.Controls.Add(this.sessionGrid);
             this.Name = "SessionHistory";
-            this.Size = new System.Drawing.Size(550, 410);
+            this.Size = new System.Drawing.Size(554, 410);
             ((System.ComponentModel.ISupportInitialize)(this.sessionGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

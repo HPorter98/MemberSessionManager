@@ -47,9 +47,6 @@ namespace MemberSessionApp
             this.label7 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtDay = new System.Windows.Forms.TextBox();
-            this.txtMonth = new System.Windows.Forms.TextBox();
-            this.txtYear = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.cmboSession = new System.Windows.Forms.ComboBox();
             this.lblfNameError = new System.Windows.Forms.Label();
@@ -59,6 +56,7 @@ namespace MemberSessionApp
             this.lblContactError = new System.Windows.Forms.Label();
             this.lblEmgError = new System.Windows.Forms.Label();
             this.dateStartYear = new System.Windows.Forms.DateTimePicker();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtFirstName
@@ -228,30 +226,6 @@ namespace MemberSessionApp
             this.label8.TabIndex = 18;
             this.label8.Text = "Start Year";
             // 
-            // txtDay
-            // 
-            this.txtDay.Enabled = false;
-            this.txtDay.Location = new System.Drawing.Point(143, 535);
-            this.txtDay.Name = "txtDay";
-            this.txtDay.Size = new System.Drawing.Size(31, 23);
-            this.txtDay.TabIndex = 17;
-            // 
-            // txtMonth
-            // 
-            this.txtMonth.Enabled = false;
-            this.txtMonth.Location = new System.Drawing.Point(180, 535);
-            this.txtMonth.Name = "txtMonth";
-            this.txtMonth.Size = new System.Drawing.Size(31, 23);
-            this.txtMonth.TabIndex = 19;
-            // 
-            // txtYear
-            // 
-            this.txtYear.Enabled = false;
-            this.txtYear.Location = new System.Drawing.Point(217, 535);
-            this.txtYear.Name = "txtYear";
-            this.txtYear.Size = new System.Drawing.Size(61, 23);
-            this.txtYear.TabIndex = 20;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -351,11 +325,23 @@ namespace MemberSessionApp
             this.dateStartYear.Size = new System.Drawing.Size(135, 23);
             this.dateStartYear.TabIndex = 30;
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(105, 519);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(100, 23);
+            this.btnDelete.TabIndex = 31;
+            this.btnDelete.Text = "Delete Member\r\n";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Visible = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // MemberForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(392, 570);
+            this.ClientSize = new System.Drawing.Size(404, 578);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.dateStartYear);
             this.Controls.Add(this.lblEmgError);
             this.Controls.Add(this.lblContactError);
@@ -365,10 +351,7 @@ namespace MemberSessionApp
             this.Controls.Add(this.lblfNameError);
             this.Controls.Add(this.cmboSession);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.txtYear);
-            this.Controls.Add(this.txtMonth);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.txtDay);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.btnSave);
@@ -415,9 +398,6 @@ namespace MemberSessionApp
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtDay;
-        private System.Windows.Forms.TextBox txtMonth;
-        private System.Windows.Forms.TextBox txtYear;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cmboSession;
         private System.Windows.Forms.Label lblfNameError;
@@ -427,5 +407,6 @@ namespace MemberSessionApp
         private System.Windows.Forms.Label lblContactError;
         private System.Windows.Forms.Label lblEmgError;
         private System.Windows.Forms.DateTimePicker dateStartYear;
+        private System.Windows.Forms.Button btnDelete;
     }
 }
