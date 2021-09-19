@@ -69,9 +69,9 @@ namespace MemberSessionApp
 
         private void OpenMemberForm(object sender, DataGridViewCellEventArgs e)
         {
-            //Retrieve member ID from data grid
             try
             {
+                //Retrieve member ID from data grid
                 int i = (int)SearchTable.Rows[e.RowIndex].Cells[0].Value;
                 //Retrieve and set that member from the database
                 Member member = GetMemberByID(i);

@@ -26,8 +26,18 @@ create table SessionDetails(
 	SessionType varchar(30)
 )
 
+/*
 create table MemberSession(
 	ID int primary key identity(1,1),
 	SessionID varchar(50) foreign key references SessionDetails(SessionID),
 	PersonID int foreign key references Members(PersonID)
+)
+*/
+
+create table MemberSession(
+	ID int primary key identity(1,1),
+	SessionID varchar(50) foreign key references SessionDetails(SessionID),
+	PersonID int not null,
+	FirstName varchar(50) not null,
+	LastName varchar(50) not null
 )

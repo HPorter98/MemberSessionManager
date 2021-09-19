@@ -258,12 +258,15 @@ namespace MemberSessionApp
     
         private void AddMemberToSession(SqlConnection connection, string sessionID)
         {
-            string query = "INSERT INTO MemberSession(SessionID, PersonID) VALUES (@id, @memberID);";
+            string query = "INSERT INTO MemberSession(SessionID, PersonID, FirstName, LastName) VALUES (@id, @memberID, @fName, @lName);";
+            //string query = "INSERT INTO MemberSession(SessionID, PersonID) VALUES (@id, @memberID);";
             using (SqlCommand cmd = new SqlCommand(query, connection))
             {
                 //Bind parameters to query
                 cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = sessionID;
                 cmd.Parameters.Add("@memberID", SqlDbType.Int).Value = int.Parse(txtID.Text);
+                cmd.Parameters.Add("@fName", SqlDbType.VarChar).Value = txtFirstName.Text;
+                cmd.Parameters.Add("@lName", SqlDbType.VarChar).Value = txtLastName.Text;
 
                 //Store and check if any rows were effected
                 int rowsAdded = cmd.ExecuteNonQuery();
@@ -306,6 +309,11 @@ namespace MemberSessionApp
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            //MessageBox.Show(txtID.Text);
+            //int sum = int.Parse(txtID.Text) + 7;
+            //MessageBox.Show(sum.ToString());
+
+            //Does not delete cause it is a primary key. Conflicts with member session
             string query = $"DELETE FROM Members WHERE PersonID = {int.Parse(txtID.Text)}";
             using (SqlConnection connection = new SqlConnection(Helper.ConVal("Members")))
             using (SqlCommand command = new SqlCommand(query, connection))
