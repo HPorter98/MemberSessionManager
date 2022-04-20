@@ -12,8 +12,8 @@ CREATE TABLE Members (
 
 /* example data */
 
-INSERT INTO Members(LastName, FirstName, HomeAddress, PostCode, ContactNum, EmergencyContact, StartYear) values('Porter', 'Harry', '132 Great Hayles Road', 
-'BS14 0RY', '07801986058', '07801986058', '2021-06-21');
+INSERT INTO Members(LastName, FirstName, HomeAddress, PostCode, ContactNum, EmergencyContact, StartYear) values('Bishop', 'John', '44 North End Road', 
+'BL32 5AH', '07730365221', '07801986058', '2021-06-21');
 
 INSERT INTO Members(LastName, FirstName, HomeAddress, PostCode, ContactNum, EmergencyContact, StartYear) values('Doe', 'Jane', '123 Address Street', 
 'LC12 3ST', '07920310230', '07920310230', '2021-06-21');
