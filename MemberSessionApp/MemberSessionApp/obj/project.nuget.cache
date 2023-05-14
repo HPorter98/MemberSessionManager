@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "1akT7ixocqHDz4Bv1ioyY8YRYrv0gMLT9YKR4d67Cn1MyXpIN1uClPDR4Qdvbx7qKD67M+y84L6OkYj4E7IpPw==",
+  "dgSpecHash": "27tKmlB5eD1CvoV4sGVzE+si3500UUebYbfWtC9tRLQsizTCoE55a1tX41NcunNReYaGNkyt+lgkhn60UKQPpg==",
   "success": true,
   "projectFilePath": "C:\\Users\\harry\\Documents\\VS Projects\\MemberSessionManager\\MemberSessionApp\\MemberSessionApp\\MemberSessionApp.csproj",
   "expectedPackageFiles": [
@@ -13,7 +13,11 @@
     "C:\\Users\\harry\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\harry\\.nuget\\packages\\system.data.sqlclient\\4.8.2\\system.data.sqlclient.4.8.2.nupkg.sha512",
     "C:\\Users\\harry\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
-    "C:\\Users\\harry\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512"
+    "C:\\Users\\harry\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
+    "C:\\Users\\harry\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.26\\microsoft.netcore.app.host.win-x64.3.1.26.nupkg.sha512",
+    "C:\\Users\\harry\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\harry\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\harry\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
   ],
   "logs": []
 }

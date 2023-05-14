@@ -24,8 +24,9 @@ C:\Users\harry\Documents\VS Projects\MemberSessionManager\MemberSessionApp\Membe
 C:\Users\harry\Documents\VS Projects\MemberSessionManager\MemberSessionApp\MemberSessionApp\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\harry\Documents\VS Projects\MemberSessionManager\MemberSessionApp\MemberSessionApp\obj\Debug\netcoreapp3.1\MemberSessionApp.csproj.CopyComplete
 C:\Users\harry\Documents\VS Projects\MemberSessionManager\MemberSessionApp\MemberSessionApp\obj\Debug\netcoreapp3.1\MemberSessionApp.AddMember.resources
-C:\Users\harry\Documents\VS Projects\MemberSessionManager\MemberSessionApp\MemberSessionApp\obj\Debug\netcoreapp3.1\MemberSessionApp.csprojAssemblyReference.cache
 C:\Users\harry\Documents\VS Projects\MemberSessionManager\MemberSessionApp\MemberSessionApp\obj\Debug\netcoreapp3.1\MemberSessionApp.MemberForm.resources
 C:\Users\harry\Documents\VS Projects\MemberSessionManager\MemberSessionApp\MemberSessionApp\bin\Debug\netcoreapp3.1\FluentValidation.dll
 C:\Users\harry\Documents\VS Projects\MemberSessionManager\MemberSessionApp\MemberSessionApp\obj\Debug\netcoreapp3.1\MemberSessionApp.SessionHistory.resources
 C:\Users\harry\Documents\VS Projects\MemberSessionManager\MemberSessionApp\MemberSessionApp\obj\Debug\netcoreapp3.1\MemberSessionApp.SessionForm.resources
+C:\Users\harry\Documents\VS Projects\MemberSessionManager\MemberSessionApp\MemberSessionApp\obj\Debug\netcoreapp3.1\MemberSessionApp.csproj.AssemblyReference.cache
+C:\Users\harry\Documents\VS Projects\MemberSessionManager\MemberSessionApp\MemberSessionApp\obj\Debug\netcoreapp3.1\MemberSessionApp.GeneratedMSBuildEditorConfig.editorconfig
