@@ -58,11 +58,8 @@ namespace MemberSessionApp
 
         private void LoadMembers()
         {
-            //string query = "select [Members].PersonID, [Members].FirstName, [Members].LastName from Members " +
-            //               "inner join MemberSession on[Members].PersonID = [MemberSession].PersonID " +
-            //               $"where [MemberSession].SessionID = '{sessionID}'; ";
 
-            string query = $"SELECT PersonID, FirstName, LastName FROM MemberSession WHERE SessionID = '{sessionID}';";
+            string query = $"SELECT PersonID, FirstName, LastName FROM MemberSession WHERE SessionID = @sessionID;";
 
             using (SqlConnection connection = new SqlConnection(Helper.ConVal("Members")))
             using (SqlDataAdapter adapter = new SqlDataAdapter(query, connection))
@@ -71,6 +68,7 @@ namespace MemberSessionApp
 
                 DataTable result = new DataTable();
 
+                adapter.SelectCommand.Parameters.Add("@sessionID", SqlDbType.VarChar).Value = sessionID;
                 adapter.Fill(result);
                 memberGrid.DataSource = result;
                 FormatTable();

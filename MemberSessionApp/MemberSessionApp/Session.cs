@@ -28,7 +28,7 @@ namespace MemberSessionApp
             string query = "select [Members].[PersonID], [Members].FirstName, [Members].LastName, [SessionDetails].SessionEndTime from Members " +
                            "inner join MemberSession on [Members].PersonID = [MemberSession].PersonID " +
                            "inner join SessionDetails on[SessionDetails].SessionID = [MemberSession].SessionID " +
-                           $"where[MemberSession].SessionID = '{sessionID}';";
+                           $"where[MemberSession].SessionID = @sessionID;";
             
             try
             {
@@ -42,6 +42,7 @@ namespace MemberSessionApp
                     DataTable search = new DataTable();
 
                     //Fill the data grid table with data retrieve from database
+                    adapter.SelectCommand.Parameters.Add("@sessionID", SqlDbType.VarChar).Value = sessionID;
                     adapter.Fill(search);
                     gridSession.DataSource = search;
                     FormatTable();

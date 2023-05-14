@@ -85,7 +85,7 @@ namespace MemberSessionApp
                 string sessionID = cmboSession.SelectedItem.ToString() + "/" + dateString;
                 
                 //Prepare query
-                string query = $"Select SessionID from SessionDetails WHERE SessionID = '{sessionID}';";
+                string query = "Select SessionID from SessionDetails WHERE SessionID = @sessionID;";
                 try
                 {
                     bool result;
@@ -95,6 +95,7 @@ namespace MemberSessionApp
                         connection.Open();
 
                         SqlCommand cmd = new SqlCommand(query, connection);
+                        cmd.Parameters.Add("@sessionID", SqlDbType.VarChar).Value = sessionID;
                         SqlDataReader reader = cmd.ExecuteReader();
                         result = reader.HasRows;
                         reader.Close();
@@ -259,7 +260,6 @@ namespace MemberSessionApp
         private void AddMemberToSession(SqlConnection connection, string sessionID)
         {
             string query = "INSERT INTO MemberSession(SessionID, PersonID, FirstName, LastName) VALUES (@id, @memberID, @fName, @lName);";
-            //string query = "INSERT INTO MemberSession(SessionID, PersonID) VALUES (@id, @memberID);";
             using (SqlCommand cmd = new SqlCommand(query, connection))
             {
                 //Bind parameters to query

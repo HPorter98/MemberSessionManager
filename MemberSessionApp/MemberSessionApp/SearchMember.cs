@@ -20,25 +20,25 @@ namespace MemberSessionApp
 
         public void UpdateTable()
         {
-            string value = txtSearch.Text;
+            string searchValue = txtSearch.Text;
             try
             {
+                string query = "Select PersonID, LastName, FirstName FROM members WHERE LastName LIKE @value;";
                 //create new conneciton and execute query
                 using (SqlConnection connection = new SqlConnection(Helper.ConVal("Members")))
-                using (SqlDataAdapter adapter = new SqlDataAdapter("Select PersonID, LastName, " +
-                    "FirstName FROM members WHERE LastName LIKE '%" + value + "%';", connection))
+                using (SqlDataAdapter adapter = new SqlDataAdapter(query, connection))
                 {
                     connection.Open();
 
                     DataTable search = new DataTable();
-
                     //Fill the data grid table with data retrieve from database
+                    adapter.SelectCommand.Parameters.Add("@value", SqlDbType.VarChar).Value = "%" + searchValue + "%";
                     adapter.Fill(search);
                     SearchTable.DataSource = search;
                     FormatTable();
                 }
 
-                if (value == string.Empty)
+                if (searchValue == string.Empty)
                 {
                     SearchTable.DataSource = null;
                 }
@@ -94,7 +94,7 @@ namespace MemberSessionApp
 
         private Member GetMemberByID(int id)
         {
-            Member m = new Member();
+            Member member = new Member();
             string query = "SELECT * FROM Members WHERE PersonID = @id"; 
 
             try
@@ -112,19 +112,19 @@ namespace MemberSessionApp
                                 //Add result values to a member object.
                                 //This block of code retrieves data for each column
                                 //Within the database table.
-                                m.ID = reader.GetInt32("PersonID");
-                                m.LastName = reader.GetString("LastName");
-                                m.FirstName = reader.GetString("FirstName");
-                                m.Address = reader.GetString("HomeAddress");
-                                m.PostCode = reader.GetString("PostCode");
-                                m.ContactNum = reader.GetString("ContactNum");
-                                m.EmergencyNum = reader.GetString("EmergencyContact");
-                                m.startYear = reader.GetDateTime("StartYear");
+                                member.ID = reader.GetInt32("PersonID");
+                                member.LastName = reader.GetString("LastName");
+                                member.FirstName = reader.GetString("FirstName");
+                                member.Address = reader.GetString("HomeAddress");
+                                member.PostCode = reader.GetString("PostCode");
+                                member.ContactNum = reader.GetString("ContactNum");
+                                member.EmergencyNum = reader.GetString("EmergencyContact");
+                                member.startYear = reader.GetDateTime("StartYear");
                             }
                         }
                     }
                 }
-                return m;
+                return member;
             }
             catch
             {
